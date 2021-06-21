@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>MySQL数据库 - 初步认识 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="摘要有关MySQL数据库的基础知识，包括一些专用名称解析以及必会知识点，有待更正与完善～"><meta property="og:type" content="blog"><meta property="og:title" content="minz VV"><meta property="og:url" content="https://minzvv.github.io/"><meta property="og:site_name" content="minz VV"><meta property="og:description" content="摘要有关MySQL数据库的基础知识，包括一些专用名称解析以及必会知识点，有待更正与完善～"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><meta property="article:published_time" content="2020-08-03T12:41:02.000Z"><meta property="article:modified_time" content="2021-06-21T13:12:32.103Z"><meta property="article:author" content="minzVV"><meta property="article:tag" content="MySQL"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2020/08/03/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%20-%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/"},"headline":"Hexo","image":["http://example.com/img/og_image.png"],"datePublished":"2020-08-03T12:41:02.000Z","dateModified":"2021-06-21T13:12:32.103Z","author":{"@type":"Person","name":"minzVV"},"description":"摘要有关MySQL数据库的基础知识，包括一些专用名称解析以及必会知识点，有待更正与完善～"}</script><link rel="canonical" href="http://example.com/2020/08/03/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%20-%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="referrer" content="no-referrer-when-downgrade"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2020-08-03  <a class="commentCountImg" href="/2020/08/03/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%20-%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/#comment-container"><span class="display-none-class">4003c299d848195f71c40199a095783f</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="4003c299d848195f71c40199a095783f">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>22 分钟  <i class="fas fa-pencil-alt"> </i>3.4 k</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">MySQL数据库 - 初步认识</h1><div class="content"><blockquote>
+<p>摘要<br>有关MySQL数据库的基础知识，包括一些专用名称解析以及必会知识点，有待更正与完善～</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h2 id="初识MySQL数据库"><a href="#初识MySQL数据库" class="headerlink" title="初识MySQL数据库"></a>初识MySQL数据库</h2><p>我们在编写任何程序之前，都需要事先写好基于网络操作一台主机上文件的程序（socket服务端与客户端程序），于是有人将此类程序写成一个专门的处理软件，这就是mysql等数据库管理软件的由来，但mysql解决的不仅仅是<strong>数据共享</strong>的问题，还有<strong>查询效率</strong>，<strong>安全性</strong>等一系列问题。</p>
+<p>总之，把程序员从数据管理中解脱出来，专注于自己的程序逻辑的编写~。</p>
+<h3 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h3><p><strong>数据（Data）</strong>：描述事物的符号记录称为数据，描述事物的符号既可以是数字，也可以是文字、图片，图像、声音、语言等，数据由多种表现形式，它们都可以经过数字化后存入计算机；在计算机中描述一个事物，就需要抽取这一事物的典型特征，组成一条记录，就相当于文件里的一行内容。</p>
+<p><strong>数据库（Databases，简称DB）</strong>：数据库库即存放数据的仓库，只不过这个仓库是在计算机存储设备上，而且数据是按一定的格式存放的；数据库是长期存放在计算机内、有组织、可共享的数据即可。数据库中的数据按一定的数据模型组织、描述和储存，具有较小的冗余度、较高的数据独立性和易扩展性，并可为各种用户共享。</p>
+<p><strong>数据库管理系统</strong>（DataBase Management System 简称DBMS）在了解了Data与DB的概念后，如何科学地组织和存储数据，如何高效获取和维护数据成了关键~~</p>
+<p>这就用到了一个系统软件—数据库管理系统如MySQL、Oracle、SQLite、Access、MS SQL Server</p>
+<blockquote>
+<p>常见的数据库模型分为<strong>关系型数据库</strong>（MySQL、Oracle、SQL Server….）和<strong>非关系型数据库</strong>（<strong>文档存储数据库</strong>MongoDB；<strong>键值存储数据库</strong>Redis、Memcached、<strong>列存储数据库</strong>HBase、图形数据库Neo4J）</p>
+</blockquote>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol>
+<li><p><strong>数字</strong>：</p>
+<ul>
+<li><p><strong>整型</strong>：</p>
+<p><strong>tinyint</strong> [(m)] [unsigned] [zerofill]：小整数，数据类型用于保存一些范围的整数</p>
+<p>数值范围：</p>
+<p>​                有符号：-128 ～ 127</p>
+<p>​                无符号：0 ～ 255</p>
+<p>注意： MySQL中无布尔值，使用tinyint(1)构造。</p>
+<p><strong>int</strong> [(m)] [unsigned] [zerofill]：整数，数据类型用于保存一些范围的整数</p>
+<p>数值范围：</p>
+<p>​                有符号：-2147483648 ～ 2147483647</p>
+<p>​                无符号：0 ～ 4294967295</p>
+<p><strong>bigint</strong> [(m)] [unsigned] [zerofill]：大整数，数据类型用于保存一些范围的整数</p>
+<p>数值范围：</p>
+<p>​                有符号：-9223372036854775808 ～ 9223372036854775807</p>
+<p>​                无符号：0  ～  18446744073709551615</p>
+</li>
+</ul>
+<blockquote>
+<p> <strong>zerofill 使用说明</strong>：例如 int(5)表示当数值宽度小于 5 位的时候在数字前面加’0’填满宽度,如果不显示指定宽度则默认为 int(11)，zerofill**默认为int(10)**。</p>
+<p>注:当使用zerofill 时，默认会自动加unsigned（无符号）属性，使用unsigned属性后，数值范围是原值的2倍，例如，有符号为-128～+127，无符号为0~256。</p>
+</blockquote>
+<ul>
+<li><p><strong>小数</strong>：m是数字总个数，d是小数点后个数。m最大值为255，d最大值为30。</p>
+<p>  ​    <strong>float</strong> [(M,D)] [unsigned] [zerofill]：单精度浮点数（非准确小数值）</p>
+<p>  ​            特性：随着小数的增多，精度变得不准确</p>
+<p>  ​    <strong>double</strong> [(M,D)] [unsigned] [zerofill]：双精度浮点数（非准确小数值）。</p>
+<p>  ​            特性：随着小数的增多，精度比float要高，但也会变得不准确</p>
+<p>  ​    <strong>decimal</strong> [(M[,D])] [unsigned] [zerofill]：准确的小数值。</p>
+<p>  ​            m是数字总个数（负号不算），d是小数点后个数。 m最大值为65，d最大值为30。</p>
+<p>  ​            特性：随着小数的增多，精度始终准确。decaimal能够存储精确值的原因在于其内部按照字符串存储。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>字符串</strong></p>
+<ul>
+<li> <strong>char</strong>（10）：定长   不够的给你补上。特点：简单粗暴，浪费空间，存取速度快。</li>
+<li><strong>varchar</strong>：变长   传几个给你写几个，但不要超过字符个数精准。特点：节省空间，但存取速度慢。</li>
+<li>大于255字符，可以考虑将文件路径存放到数据库中，即数据库中只存路径或者url。</li>
+</ul>
+</li>
+<li><p><strong>时间类型</strong></p>
+<ul>
+<li><strong>year</strong> ：年</li>
+<li><strong>date</strong> ：年月日</li>
+<li><strong>time</strong> ：时分秒</li>
+<li><strong>datetime</strong> ：年月日时分秒</li>
+</ul>
+</li>
+<li><p>枚举类型与集合类型：字段的值只能在给定范围中选择，如单选框，多选框</p>
+<ul>
+<li><strong>enum</strong> 单选 只能在给定的范围内选一个值，如性别 sex 男male/女female</li>
+<li><strong>set</strong> 多选 在给定的范围内可以选择一个或一个以上的值（爱好1,爱好2,爱好3…）</li>
+</ul>
+</li>
+</ol>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="索引简介"><a href="#索引简介" class="headerlink" title="索引简介"></a>索引简介</h4><p>索引（Index）是帮助MySQL高效获取数据的数据结构。可以得到索引的本质：索引是数据结构。</p>
+<p>数据本身之外，数据库还维护着一个满足特定查找算法的数据结构，这些数据结构以某种方式指向数据，这样就可以在这些数据结构的基础上实现高级查找算法，这种数据结构就是索引。</p>
+<p>所以，索引就是一种帮助MySQL高效获取数据的排好序的快速查找的数据结构。</p>
+<h4 id="索引优劣"><a href="#索引优劣" class="headerlink" title="索引优劣"></a>索引优劣</h4><p> 一般来说索引本身也很大，不可能全部存储在内存中，因此索引往往以<strong>索引文件的形式存储的磁盘上</strong></p>
+<p> 优势：类似大学图书馆建书目索引，提高数据检索的效率，降低数据库的IO成本；通过索引列对数据进行排序，降低数据排序的成本，降低了CPU的消耗</p>
+<p> 劣势：虽然索引大大<strong>提高了查询速度，同时却会降低更新表的速度</strong>，如对表进行INSERT、UPDATE和DELETE。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件每次更新添加了索引列的字段，都会调整因为更新所带来的键值变化后的索引信息；实际上索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录，所以索引列也是要占用空间的。</p>
+<h4 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h4><blockquote>
+<p>各种结构探寻：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
+</blockquote>
+<ul>
+<li>二叉树（红黑树：也叫二叉平衡树）</li>
+<li>HASH</li>
+<li>B - TREE<ul>
+<li>度(Degree)-节点的数据存储个数</li>
+<li>叶节点具有相同的深度</li>
+<li>叶节点的指针为空</li>
+<li>节点中的数据key从左到右递增排列</li>
+</ul>
+</li>
+<li>B + TREE（B - TREE演变）<ul>
+<li>非叶子节点不存储data,只存储key,可以增大度</li>
+<li>叶子节点不存储指针</li>
+<li>顺序访问指针,提高区间访问的性能</li>
+</ul>
+</li>
+</ul>
+<h4 id="B-Tree索引的性能分析"><a href="#B-Tree索引的性能分析" class="headerlink" title="B+Tree索引的性能分析"></a>B+Tree索引的性能分析</h4><p>一般使用磁盘I/O次数评价索引结构的优劣，根据索引获取一条数据使用的I/O次数越少越优。</p>
+<ul>
+<li>预读：磁盘一般会顺序向后读取一定长度的数据(页的整数倍)放入内存</li>
+<li>局部性原理：当一个数据被用到时,其附近的数据也通常会马上被使用</li>
+<li>B+Tree节点的大小设为等于一个页,每次新建节点之间申请一个页的空间，这样就保证了一个节点物理上页存储在一个页里就实现了一个节点的载入只需一次I/O</li>
+<li>B+Tree的度d一般会超过100,因此h非常小(一般为1到3之间,极限到5)</li>
+</ul>
+<blockquote>
+<p>一般操作系统的最小存储单元为页,1页大小为4K</p>
+<p>‘SHOW GLOBAL STATUS like ‘Innodb_page_size’语句可以查看mysql文件页大小</p>
+</blockquote>
+<h4 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h4><ul>
+<li><strong>单值索引</strong>：即一个索引只包含单个列，一个表可以有多个单列索引</li>
+<li><strong>唯一索引</strong>：索引列的值必须唯一，但允许有空值</li>
+<li><strong>主键索引</strong>：设定为主键后数据库会自动建立索引，innodb为聚簇索引</li>
+<li><strong>复合索引</strong>：即一个索引包含多个列</li>
+</ul>
+<h3 id="MySQL常见存储引擎"><a href="#MySQL常见存储引擎" class="headerlink" title="MySQL常见存储引擎"></a>MySQL常见存储引擎</h3><ul>
+<li><strong>MyISAM索引</strong>实现(非聚集)<ul>
+<li>MyISAM索引文件和数据文件时分离的</li>
+</ul>
+</li>
+<li><strong>InnoDB索引</strong>实现(聚集)<ul>
+<li>表数据文件本身就是按B+Tree组织的一个索引结构文件</li>
+<li>聚集索引 - 叶节点包含了完整的数据记录</li>
+<li>InnoDB表必须有主键,并且推荐使用整型的自增主键</li>
+<li>非主键索引结构叶子节点存储的时主键值(一致性和节省存储空间)</li>
+</ul>
+</li>
+</ul>
+<h3 id="完整型约束"><a href="#完整型约束" class="headerlink" title="完整型约束"></a>完整型约束</h3><p>完整型约束的作用：用于保证数据的完整性和一致性</p>
+<blockquote>
+<ol>
+<li>是否允许为空，默认NULL，可设置NOT NULL，字段不允许为空，必须赋值</li>
+<li>字段是否有默认值，缺省的默认值是NULL，如果插入记录时不给字段赋值，此字段使用默认值</li>
+<li>是否为key ：主键 primary key、外键 foreign key、索引 (index,unique…)</li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>PRIMARY KEY</strong> (PK)    标识该字段为该表的主键，可以唯一的标识记录（不为空且唯一）</li>
+<li><strong>FOREIGN KEY</strong> (FK)    标识该字段为该表的外键</li>
+<li><strong>NOT NULL</strong>            标识该字段不能为空</li>
+<li><strong>UNIQUE KEY</strong> (UK)     标识该字段的值是唯一的<ul>
+<li>单列唯一 ：在字段后加unique，指的是这个字段的记录是唯一的不能重复</li>
+<li>联合唯一 ：例如ip和端口均是唯一的，这种叫联合唯一</li>
+</ul>
+</li>
+<li><strong>AUTO_INCREMENT</strong>      标识该字段的值自动增长（整数类型，而且为主键）</li>
+<li><strong>DEFAULT</strong>             为该字段设置默认值</li>
+</ul>
+<h3 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h3><h4 id="单表使用索引以及常见的索引失效"><a href="#单表使用索引以及常见的索引失效" class="headerlink" title="单表使用索引以及常见的索引失效"></a>单表使用索引以及常见的索引失效</h4><ul>
+<li>全值匹配</li>
+<li>最佳左前缀法则：如果索引了多列，要遵守最左前缀法则。指的是查询从索引的最左前列开始并且不跳过索引中的列。</li>
+<li>不在索引列上做任何操作（计算、函数、(自动or手动)类型转换），会导致索引失效而转向全表扫描</li>
+<li>存储引擎不能使用索引中<strong>范围条件右边的列</strong>；</li>
+<li>mysql 在使用不等于(!= 或者&lt;&gt;)的时候无法使用索引会导致全表扫描；</li>
+<li>is not null 也无法使用索引,但是is null是可以使用索引的；</li>
+<li>like以通配符开头(‘%abc…’)mysql索引失效会变成全表扫描的操作；</li>
+<li>字符串不加单引号也会引起索引失效</li>
+</ul>
+<blockquote>
+<p>建议：</p>
+<p>对于单键索引，尽量选择针对当前query过滤性更好的索引；在选择组合索引的时候，当前Query中过滤性最好的字段在索引字段顺序中，位置越靠前越好。</p>
+<p>在选择组合索引的时候，尽量选择可以能够包含当前query中的where字句中更多字段的索引；</p>
+<p>在选择组合索引的时候，如果某个字段可能出现范围查询时，尽量把这个字段放在索引次序的最后面；</p>
+</blockquote>
+<h4 id="关联查询优化"><a href="#关联查询优化" class="headerlink" title="关联查询优化"></a>关联查询优化</h4><ol>
+<li>保证被驱动表的join字段已经被索引</li>
+<li>left join时，选择小表作为驱动表（也就是主表），大表作为被驱动表（从表）</li>
+<li>inner join时，mysql会自动将小结果集的表选为驱动表</li>
+<li>子查询尽量不要放在被驱动表，有可能使用不到索引</li>
+<li>能够直接多表关联的尽量直接关联，不使用子查询</li>
+</ol>
+<h4 id="子查询优化"><a href="#子查询优化" class="headerlink" title="子查询优化"></a>子查询优化</h4><blockquote>
+<p>尽量不要使用not in  或者 not exists，用left outer join  on  xxx is null 替代；</p>
+</blockquote>
+<h4 id="排序分组优化"><a href="#排序分组优化" class="headerlink" title="排序分组优化"></a>排序分组优化</h4><p>～待补充</p>
+<h3 id="pymysql使用"><a href="#pymysql使用" class="headerlink" title="pymysql使用"></a>pymysql使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">user=<span class="built_in">input</span>(<span class="string">&#x27;user&gt;&gt;: &#x27;</span>).strip()</span><br><span class="line">pwd=<span class="built_in">input</span>(<span class="string">&#x27;password&gt;&gt;: &#x27;</span>).strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立链接</span></span><br><span class="line">conn=pymysql.connect(</span><br><span class="line">    host=<span class="string">&#x27;192.168.1.123&#x27;</span>,</span><br><span class="line">    port=<span class="number">3306</span>,</span><br><span class="line">    user=<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    password=<span class="string">&#x27;123&#x27;</span>,</span><br><span class="line">    db=<span class="string">&#x27;db10&#x27;</span>,</span><br><span class="line">    charset=<span class="string">&#x27;utf8&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拿到游标</span></span><br><span class="line">cursor=conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行sql语句</span></span><br><span class="line"><span class="comment"># sql=&#x27;select * from userinfo where user = &quot;%s&quot; and pwd=&quot;%s&quot;&#x27; %(user,pwd)</span></span><br><span class="line"><span class="comment"># print(sql)</span></span><br><span class="line"><span class="comment"># rows=cursor.execute(sql)</span></span><br><span class="line"></span><br><span class="line">sql=<span class="string">&#x27;select * from userinfo where user = %s and pwd=%s&#x27;</span></span><br><span class="line"><span class="comment">#由execute作为拼接，不用你自己去拼接了，在拼接过程中给你过滤掉这种非法操作</span></span><br><span class="line">rows=cursor.execute(sql,(user,pwd)) <span class="comment">#提交给游标执行  execute这个接口拿到的是2 rows in set (0.00 sec) 2那个行数，如果值不为0说明就输对了</span></span><br><span class="line"></span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行判断</span></span><br><span class="line"><span class="keyword">if</span> rows:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;登录成功&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;登录失败&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>以上是学习MySQL数据库的一下学习笔记，记录下来以供随时翻阅，查漏补缺，感谢阅读～</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>MySQL数据库 - 初步认识</p><p><a href="http://example.com/2020/08/03/MySQL数据库 -初步认识/">http://example.com/2020/08/03/MySQL数据库 -初步认识/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><a href="http://example.com"><p>minzVV</p></a></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-08-03</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="recommend-area"><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2021/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BB%E6%89%BE%E7%AC%ACN%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE/" target="_blank">每日一题 - 寻找第N高的数据</a><br></span><span>  2.<a class="is-size-6" href="/2021/05/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9F%A5%E6%89%BE%E9%87%8D%E5%A4%8D%E5%80%BC/" target="_blank">每日一题 - 查找重复值</a><br></span></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/zfb.jpeg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/weixin.jpeg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/08/07/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">python数据类型 - 字符串</span></a></div></nav><!--!--><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            language:'zh-CN',
+            id: '4003c299d848195f71c40199a095783f',
+            repo: 'blog_comment',
+            owner: 'minzVV',
+            clientID: '475adee66f81ffbd3dc5',
+            clientSecret: '9231bb18bd4b221c6b2271ce8c57c4f3638b8006',
+            admin: "minzVV",
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex is-mobile" href="#初识MySQL数据库"><span>初识MySQL数据库</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#专有名词"><span>专有名词</span></a></li><li><a class="is-flex is-mobile" href="#数据类型"><span>数据类型</span></a></li><li><a class="is-flex is-mobile" href="#索引"><span>索引</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#索引简介"><span>索引简介</span></a></li><li><a class="is-flex is-mobile" href="#索引优劣"><span>索引优劣</span></a></li><li><a class="is-flex is-mobile" href="#索引结构"><span>索引结构</span></a></li><li><a class="is-flex is-mobile" href="#B-Tree索引的性能分析"><span>B+Tree索引的性能分析</span></a></li><li><a class="is-flex is-mobile" href="#索引分类"><span>索引分类</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#MySQL常见存储引擎"><span>MySQL常见存储引擎</span></a></li><li><a class="is-flex is-mobile" href="#完整型约束"><span>完整型约束</span></a></li><li><a class="is-flex is-mobile" href="#查询优化"><span>查询优化</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#单表使用索引以及常见的索引失效"><span>单表使用索引以及常见的索引失效</span></a></li><li><a class="is-flex is-mobile" href="#关联查询优化"><span>关联查询优化</span></a></li><li><a class="is-flex is-mobile" href="#子查询优化"><span>子查询优化</span></a></li><li><a class="is-flex is-mobile" href="#排序分组优化"><span>排序分组优化</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#pymysql使用"><span>pymysql使用</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#写在后面"><span>写在后面</span></a></li></ul></div></div><style>.menu-list > li > a.is-active + .menu-list { display: block; }.menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png" alt="minzVV"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">minzVV</p><p class="is-size-6 is-block">但行好事，莫问前程</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国广东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">19</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">14</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/minzVV" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/minzVV"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wong_minz@163.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Next" href="https://minzVV.github.io/minzVV.io"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/MySQL%E7%BB%83%E4%B9%A0%E9%A2%98/"><span class="tag">MySQL练习题</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python%E5%BA%93/"><span class="tag">Python库</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><span class="tag">python数据类型</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E8%A1%A8/"><span class="tag">可视化图表</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"><span class="tag">名词解析</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"><span class="tag">算法基础</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B/"><span class="tag">二八定律</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/"><span class="tag">对比分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83/"><span class="tag">数据分布</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C/"><span class="tag">正态性检验</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/"><span class="tag">相关性分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><span class="tag">统计分析</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">icarus</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/removeif/hexo-theme-amazing" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">amazing</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/minzVV/blog" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">myblog_theme</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟缓存...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-21T13:09:52.927Z">2021-06-21</time></p><p class="title"><a href="/2021/06/21/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-29T12:41:02.000Z">2021-05-29</time></p><p class="title"><a href="/2021/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BB%E6%89%BE%E7%AC%ACN%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE/">每日一题 - 寻找第N高的数据</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-28T14:33:36.000Z">2021-05-28</time></p><p class="title"><a href="/2021/05/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9F%A5%E6%89%BE%E9%87%8D%E5%A4%8D%E5%80%BC/">每日一题 - 查找重复值</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-26T06:58:34.000Z">2021-05-26</time></p><p class="title"><a href="/2021/05/26/blog_post/">博客文章属性</a></p><p class="categories"><a href="/categories/blog/">blog</a> / <a href="/categories/blog/post/">post</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-11-13T12:41:02.000Z">2020-11-13</time></p><p class="title"><a href="/2020/11/13/%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95-%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97/">随机算法之蒙特卡罗</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E7%AE%97%E6%B3%95/">算法</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/SQL/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/blog/post/"><span class="level-start"><span class="level-item">post</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/python/Matplotlib/"><span class="level-start"><span class="level-item">Matplotlib</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/Seaborn/"><span class="level-start"><span class="level-item">Seaborn</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/data-type/"><span class="level-start"><span class="level-item">data_type</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="level-start"><span class="level-item">数据分析</span></span><span class="level-end"><span class="level-item tag">10</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%8F%AF%E8%A7%86%E5%8C%96/"><span class="level-start"><span class="level-item">可视化</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a><p class="size-small"><span>&copy; 2021 minzVV</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a> &amp; <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">Amazing</a> <br><span>© <a href="http://www.beian.miit.gov.cn/" target="_blank">川ICP备88888888号-8（测试）</a><br></span><span>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br />&nbsp;&nbsp;&nbsp;&nbsp;方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br /></span><span><span id="statistic-times">loading...</span><script>function createTime(time) {
+            var n = new Date(time);
+            now.setTime(now.getTime() + 250),
+                days = (now - n) / 1e3 / 60 / 60 / 24,
+                dnum = Math.floor(days),
+                hours = (now - n) / 1e3 / 60 / 60 - 24 * dnum,
+                hnum = Math.floor(hours),
+            1 == String(hnum).length && (hnum = "0" + hnum),
+                minutes = (now - n) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+                mnum = Math.floor(minutes),
+            1 == String(mnum).length && (mnum = "0" + mnum),
+                seconds = (now - n) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+                snum = Math.round(seconds),
+            1 == String(snum).length && (snum = "0" + snum),
+                document.getElementById("statistic-times").innerHTML = "❤️本站自 <strong>"+time.split(" ")[0].replace(/\//g,".")+"</strong> 已运行 <strong>" + dnum + "</strong> 天 <strong>" + hnum + "</strong> 小时 <strong>" + mnum + "</strong> 分 <strong>" + snum + "</strong> 秒！❤️";
+        }var now = new Date();setInterval("createTime('2021/03/15 00:00:00')", 250,"");</script><br></span><div class="size-small"><span>❤️感谢 <strong><span id="busuanzi_value_site_uv">99+</span></strong> 小伙伴的 <strong><span id="busuanzi_value_site_pv">99+</span></strong> 次光临！❤️</span></div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/minzVV/hexo-theme-amazing"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);})</script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        function loadMathJax() { //加载mathjax
+            $.getScript("//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML", function () {
+                MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\(', '\)']] } });
+                var math = document.getElementsByClassName("entry-content")[0];
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]);
+            });
+        };
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+            if(typeof loadBanner == 'function'){
+                loadBanner();
+            }
+        });</script></body></html>
