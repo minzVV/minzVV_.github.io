@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>电商项目：母婴用品购买行为分析 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="摘要通过母婴类产品客户购买行为数据分析，找出核心的用户群，并分析整理销量的趋势，找出其中需要改进的环节～"><meta property="og:type" content="blog"><meta property="og:title" content="minz VV"><meta property="og:url" content="https://minzvv.github.io/"><meta property="og:site_name" content="minz VV"><meta property="og:description" content="摘要通过母婴类产品客户购买行为数据分析，找出核心的用户群，并分析整理销量的趋势，找出其中需要改进的环节～"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><meta property="article:published_time" content="2021-01-29T12:41:02.000Z"><meta property="article:modified_time" content="2021-06-23T06:26:36.565Z"><meta property="article:author" content="minzVV"><meta property="article:tag" content="数据分析项目"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/29/%E6%AF%8D%E5%A9%B4%E4%BA%A7%E5%93%81%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"},"headline":"Hexo","image":["https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-2.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-3.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-4.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-5.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-6.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-7.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-8.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-9.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-10.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-11.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-12.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-13.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-14.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-15.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-16.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-17.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-18.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-19.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-20.png","https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-21.png"],"datePublished":"2021-01-29T12:41:02.000Z","dateModified":"2021-06-23T06:26:36.565Z","author":{"@type":"Person","name":"minzVV"},"description":"摘要通过母婴类产品客户购买行为数据分析，找出核心的用户群，并分析整理销量的趋势，找出其中需要改进的环节～"}</script><link rel="canonical" href="http://example.com/2021/01/29/%E6%AF%8D%E5%A9%B4%E4%BA%A7%E5%93%81%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="referrer" content="no-referrer-when-downgrade"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2021-01-29  <a class="commentCountImg" href="/2021/01/29/%E6%AF%8D%E5%A9%B4%E4%BA%A7%E5%93%81%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/#comment-container"><span class="display-none-class">6451d80dcd50f5b1a042d3757ade3fa7</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="6451d80dcd50f5b1a042d3757ade3fa7">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>22 分钟  <i class="fas fa-pencil-alt"> </i>3.2 k</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">电商项目：母婴用品购买行为分析</h1><div class="content"><blockquote>
+<p>摘要<br>通过母婴类产品客户购买行为数据分析，找出核心的用户群，并分析整理销量的趋势，找出其中需要改进的环节～</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p><strong>项目名称</strong>：母婴用品数据分析</p>
+<p><strong>数据来源</strong>：数据来源于阿里云天池，有2个表，记录了用户身份信息，商品购买数量，用户的年龄和商品数等。时间介于12年至15年。</p>
+<p><strong>字段说明</strong>：</p>
+<blockquote>
+<p>baby_trade_history表：</p>
+<p>​    user_id：用户id(唯一值)</p>
+<p>​    auction_id：购买行为编号</p>
+<p>​    cat_id：商品种类ID</p>
+<p>​    cat1：商品属于哪个类别</p>
+<p>​    property：商品属性</p>
+<p>​    buy_mount：购买数量</p>
+<p>​    day：购买时间</p>
+</blockquote>
+<blockquote>
+<p>mum_baby表：</p>
+<p>​    user_id ：用户id</p>
+<p>​    birthday ：出生日期</p>
+<p>​    gender： 性别（0 男性；1 女性）</p>
+</blockquote>
+<p><strong>项目目的</strong>：通过母婴类产品客户购买行为数据分析，为以下问题提供解释和改进建议：客户对于不同产品的偏好<br>找出核心的用户群，并对其分析整理销量的趋势分析，并找出其中需要改进的环节</p>
+<p><strong>环境解释</strong>：基于jupyter notebook，可视化工具包：seaborn、matplotlib</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chdir(<span class="string">r&#x27;/Users/nanb/Documents/数据存放&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goods_df = pd.read_csv(<span class="string">&#x27;baby_trade_history.csv&#x27;</span>,sep = <span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">baby_df = pd.read_csv(<span class="string">&#x27;mum_baby.csv&#x27;</span>,sep = <span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据整理"><a href="#数据整理" class="headerlink" title="数据整理"></a><strong>数据整理</strong></h2><h3 id="字段重命名"><a href="#字段重命名" class="headerlink" title="字段重命名"></a><strong>字段重命名</strong></h3><blockquote>
+<p>为方便字段操作与识别，进行字段重命名</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 商品信息表字段重命名</span></span><br><span class="line"></span><br><span class="line">goods_df.columns = [<span class="string">&#x27;用户id&#x27;</span>,<span class="string">&#x27;购买行为编号&#x27;</span>,<span class="string">&#x27;商品种类id&#x27;</span>,<span class="string">&#x27;商品类别&#x27;</span>,<span class="string">&#x27;商品属性&#x27;</span>,<span class="string">&#x27;购买数量&#x27;</span>,<span class="string">&#x27;购买时间&#x27;</span>]</span><br><span class="line">goods_df.head()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-2.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 婴儿信息表字段重命名</span></span><br><span class="line"></span><br><span class="line">baby_df.columns = [<span class="string">&#x27;用户id&#x27;</span>,<span class="string">&#x27;出生日期&#x27;</span>,<span class="string">&#x27;性别&#x27;</span>]</span><br><span class="line">baby_df.head()</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-3.png"><br></br></p>
+<h3 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a><strong>格式转换</strong></h3><blockquote>
+<p>方便以后换算以及添加新特征类别，进行时间格式转换</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 时间格式转换</span></span><br><span class="line"></span><br><span class="line">goods_df[<span class="string">&#x27;购买时间&#x27;</span>] = pd.to_datetime(goods_df[<span class="string">&#x27;购买时间&#x27;</span>],<span class="built_in">format</span> = <span class="string">&#x27;%Y%m%d&#x27;</span>)</span><br><span class="line">baby_df[<span class="string">&#x27;出生日期&#x27;</span>] = pd.to_datetime(baby_df[<span class="string">&#x27;出生日期&#x27;</span>],<span class="built_in">format</span> = <span class="string">&#x27;%Y%m%d&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</br>
+
+<h3 id="字段处理"><a href="#字段处理" class="headerlink" title="字段处理"></a><strong>字段处理</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 处理baby表中性别</span></span><br><span class="line"></span><br><span class="line">baby_df[<span class="string">&#x27;性别&#x27;</span>] = baby_df[<span class="string">&#x27;性别&#x27;</span>].replace([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;未知&#x27;</span>])</span><br><span class="line">baby_df.head()</span><br></pre></td></tr></table></figure>
+</br>
+
+<h3 id="新特征生成"><a href="#新特征生成" class="headerlink" title="新特征生成"></a><strong>新特征生成</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 购买年份</span></span><br><span class="line"></span><br><span class="line">goods_df[<span class="string">&#x27;购买年份&#x27;</span>] = goods_df[<span class="string">&#x27;购买时间&#x27;</span>].dt.year</span><br><span class="line"></span><br><span class="line"><span class="comment"># 购买月份</span></span><br><span class="line"></span><br><span class="line">goods_df[<span class="string">&#x27;购买月份&#x27;</span>] = goods_df[<span class="string">&#x27;购买时间&#x27;</span>].astype(<span class="string">&#x27;datetime64[M]&#x27;</span>)</span><br><span class="line"><span class="comment"># goods_df[&#x27;购买月份&#x27;] = goods_df[&#x27;购买时间&#x27;].dt.month</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 季度</span></span><br><span class="line"></span><br><span class="line">goods_df[<span class="string">&#x27;季度&#x27;</span>] = goods_df[<span class="string">&#x27;购买时间&#x27;</span>].dt.quarter</span><br><span class="line"></span><br><span class="line">goods_df.head()</span><br></pre></td></tr></table></figure>
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-4.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据购买数量进行排序，粗略查看购买数量最多的是哪些商品以及用户</span></span><br><span class="line"></span><br><span class="line">goods_df.sort_values(by = <span class="string">&#x27;购买数量&#x27;</span>,ascending = <span class="literal">False</span>).head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-5.png"></p>
+<p><strong>图表解析</strong>：单次购买数量最多的是：50014815；其次为28商品<br></br></p>
+<h2 id="可视化分析"><a href="#可视化分析" class="headerlink" title="可视化分析"></a><strong>可视化分析</strong></h2><h3 id="商品类型购买分析"><a href="#商品类型购买分析" class="headerlink" title="商品类型购买分析"></a><strong>商品类型购买分析</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 商品类别与购买数量</span></span><br><span class="line"></span><br><span class="line">goods_df[[<span class="string">&#x27;商品类别&#x27;</span>,<span class="string">&#x27;购买数量&#x27;</span>]].groupby([<span class="string">&#x27;商品类别&#x27;</span>]).<span class="built_in">sum</span>().sort_values(by=<span class="string">&#x27;购买数量&#x27;</span>,ascending=<span class="literal">False</span>).plot.bar()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-6.png"></p>
+<p><strong>图表解析</strong>：28商品产品销量最高,其次是50014815商品和50008168商品<br></br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看商品类别与购买的用户之间的联系</span></span><br><span class="line"></span><br><span class="line">df1 = goods_df[[<span class="string">&#x27;商品类别&#x27;</span>,<span class="string">&#x27;用户id&#x27;</span>]].groupby([<span class="string">&#x27;商品类别&#x27;</span>]).count()</span><br><span class="line">df1.sort_values(by = <span class="string">&#x27;用户id&#x27;</span>,ascending=<span class="literal">False</span>).plot.bar()</span><br></pre></td></tr></table></figure>
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-7.png"></p>
+<p><strong>图表解析</strong>：把汇总依据改成计数项得知，更多用户倾向于5008168产品，其次是28。</p>
+<blockquote>
+<p>由此反应出5008168接受的人群会更多但必须提高用户的粘性让其重复购买的次数增多。</p>
+</blockquote>
+</br>
+
+<h3 id="购买时间分析"><a href="#购买时间分析" class="headerlink" title="购买时间分析"></a><strong>购买时间分析</strong></h3><h4 id="月份分析"><a href="#月份分析" class="headerlink" title="月份分析"></a><strong>月份分析</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据月份分析购买趋势</span></span><br><span class="line"></span><br><span class="line">plt.style.use(<span class="string">&#x27;ggplot&#x27;</span>)</span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">goods_df.groupby(<span class="string">&#x27;购买月份&#x27;</span>)[<span class="string">&#x27;用户id&#x27;</span>].count().plot()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-8.png"></p>
+<p><strong>图表解析</strong>：</p>
+<p>2013年开始到2014年年末，用户的总体消费次数（订单数）趋势呈现上升趋势。其中，2013年和2014年年间，用户的消费波动也是相似的。<br>13年订单数有2个高峰，分别是5月和11月。<br>14年订单数有2个高峰，分别是5月在和11月。<br></br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 购买月份与购买数量</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br><span class="line">goods_df.groupby(by = <span class="string">&#x27;购买月份&#x27;</span>)[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().plot()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-9.png"></p>
+<p><strong>图表解析</strong>：2013年11月和2014年11月，由于双11活动，销量有明显的上升。其中，14年的销量明显比13年高出很多</p>
+<blockquote>
+<p>原因猜测 ：根据淘宝官方数据显示，14年阿里的销售额相当于13年的1.6倍，说明在14年双11活动开始被越来越受到大众关注，商家的促销活动也更加刺激消费，从而导致了销量的攀升</p>
+</blockquote>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据月份统计购买情况</span></span><br><span class="line"></span><br><span class="line">goods_df[<span class="string">&#x27;月份&#x27;</span>] = goods_df[<span class="string">&#x27;购买时间&#x27;</span>].dt.month</span><br><span class="line"></span><br><span class="line">goods_df.groupby(<span class="string">&#x27;月份&#x27;</span>)[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().plot(kind = <span class="string">&#x27;bar&#x27;</span>,rot = <span class="number">360</span>,figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a22605a20&gt;
+</code></pre>
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-10.png"></p>
+<p><strong>图表解析</strong>：根据月份统计销售情况，11月是全年最高的，可能由于双十一促销或者商家活动所导致销量攀升<br></br></p>
+<h4 id="季度分析"><a href="#季度分析" class="headerlink" title="季度分析"></a><strong>季度分析</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据季度分析购买情况</span></span><br><span class="line"></span><br><span class="line">fig,axes = plt.subplots(<span class="number">2</span>,<span class="number">1</span>,figsize = (<span class="number">15</span>,<span class="number">12</span>))</span><br><span class="line"></span><br><span class="line">goods_df.groupby(<span class="string">&#x27;季度&#x27;</span>)[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().plot(kind = <span class="string">&#x27;bar&#x27;</span>,ax = axes[<span class="number">0</span>],rot = <span class="number">360</span>)</span><br><span class="line">goods_df.groupby([<span class="string">&#x27;购买年份&#x27;</span>,<span class="string">&#x27;季度&#x27;</span>])[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().plot(kind = <span class="string">&#x27;bar&#x27;</span>,ax = axes[<span class="number">1</span>],rot = <span class="number">360</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-11.png"></p>
+<p><strong>图表解析</strong>：</p>
+<p>根据季度统计，第四季度销量最高；第一第二季度销量都不高而细分到每一年每一季度查看时：也发现每年的第一第二季度销量都不高，可认定为产品淡季；而第三第四季度销量很好，属于产品的旺季，即秋天后是母婴产品销售的旺季<br>而第四季度的销量最好，很大可能是双十一的影响根据前面图表分析入秋后销量增加，到2月又开始下滑。应在2月份发起促销清理库存，入秋后再囤积货物。</p>
+</br>
+
+<h2 id="产品需求分析"><a href="#产品需求分析" class="headerlink" title="产品需求分析"></a><strong>产品需求分析</strong></h2><h3 id="购买数量对比"><a href="#购买数量对比" class="headerlink" title="购买数量对比"></a><strong>购买数量对比</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.merge(baby_df,goods_df,on = <span class="string">&#x27;用户id&#x27;</span>,how = <span class="string">&#x27;right&#x27;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-12.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据性别划分，统计购买数量</span></span><br><span class="line"></span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br><span class="line">df.groupby(by = <span class="string">&#x27;性别&#x27;</span>)[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().plot(kind = <span class="string">&#x27;bar&#x27;</span>,rot = <span class="number">360</span>,figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-13.png"></p>
+</br>
+
+<h4 id="产品购买趋势"><a href="#产品购买趋势" class="headerlink" title="产品购买趋势"></a><strong>产品购买趋势</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sex_df = df.dropna(axis = <span class="number">0</span>,how = <span class="string">&#x27;any&#x27;</span>)</span><br><span class="line">sex_df</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-14.png"></p>
+</br>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">7</span>))</span><br><span class="line">plt.title(<span class="string">&#x27;男女婴儿产品需求折线图&#x27;</span>)</span><br><span class="line"></span><br><span class="line">man_df = sex_df.loc[sex_df[<span class="string">&#x27;性别&#x27;</span>] == <span class="string">&#x27;男&#x27;</span>]</span><br><span class="line">man_df.groupby(<span class="string">&#x27;购买月份&#x27;</span>)[<span class="string">&#x27;用户id&#x27;</span>].count().plot(label = <span class="string">&#x27;男&#x27;</span>)</span><br><span class="line"></span><br><span class="line">famale_df = sex_df.loc[sex_df[<span class="string">&#x27;性别&#x27;</span>] == <span class="string">&#x27;女&#x27;</span>]</span><br><span class="line">famale_df.groupby(<span class="string">&#x27;购买月份&#x27;</span>)[<span class="string">&#x27;用户id&#x27;</span>].count().plot(label = <span class="string">&#x27;女&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-15.png"></p>
+<p><strong>图表解析</strong>：上图可以看到，女婴销量比男婴少的原因是在14年的6月到9月，销量有个明显跌落。但在总体的产品需求趋势来看，男女婴儿大致上相同。所以商家的计划上新的产品量可以男女平均分配<br></br></p>
+<h4 id="商品类别需求"><a href="#商品类别需求" class="headerlink" title="商品类别需求"></a><strong>商品类别需求</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df5 = df[[<span class="string">&#x27;性别&#x27;</span>,<span class="string">&#x27;商品类别&#x27;</span>,<span class="string">&#x27;购买数量&#x27;</span>]]</span><br><span class="line"></span><br><span class="line">df_33 = pd.crosstab(index = df5[<span class="string">&#x27;性别&#x27;</span>],columns = df5[<span class="string">&#x27;商品类别&#x27;</span>])</span><br><span class="line">df_33.plot(kind = <span class="string">&#x27;bar&#x27;</span>,figsize = (<span class="number">15</span>,<span class="number">8</span>),fontsize = <span class="number">15</span>)</span><br><span class="line">plt.xticks(rotation = <span class="number">360</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-16.png"></p>
+<p><strong>图表解析</strong>：男女婴儿对50008168商品需求最大，且男婴比例较女婴大，正对50008168商品可以多向男婴做推广或打造爆款<br></br></p>
+<h2 id="用户分析"><a href="#用户分析" class="headerlink" title="用户分析"></a><strong>用户分析</strong></h2><h3 id="消费分析"><a href="#消费分析" class="headerlink" title="消费分析"></a><strong>消费分析</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">group_user = df.groupby(<span class="string">&#x27;用户id&#x27;</span>)</span><br><span class="line">group_user[<span class="string">&#x27;购买数量&#x27;</span>].<span class="built_in">sum</span>().describe()</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>count    29944.000000
+mean         2.546420
+std         64.015736
+min          1.000000
+25%          1.000000
+50%          1.000000
+75%          1.000000
+max      10000.000000
+Name: 购买数量, dtype: float64
+</code></pre>
+<p><strong>图表解析</strong>：平均数是2，标准差是64，表明波动比较大。中位数是1，上下四分位数也是1，说明大部分用户只购买1件。最大值是10000，说明有部分刚需用户拉大了平均值。这批用户值得开发维护。<br></br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">e = group_user.<span class="built_in">sum</span>().query(<span class="string">&#x27;购买数量 &lt; 17&#x27;</span>)</span><br><span class="line"></span><br><span class="line">e[<span class="string">&#x27;购买数量&#x27;</span>].plot.hist(bins = <span class="number">16</span>,figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-17.png"></p>
+<p><strong>图表解析</strong>：可以看出绝大部分用户只购买了一件<br></br></p>
+<h3 id="行为分析"><a href="#行为分析" class="headerlink" title="行为分析"></a><strong>行为分析</strong></h3><h4 id="用户首购"><a href="#用户首购" class="headerlink" title="用户首购"></a><strong>用户首购</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户首购 -- 第一次购买</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;购买月份&#x27;</span>].value_counts().index.sort_values()</span><br><span class="line"></span><br><span class="line"><span class="comment"># s = df.groupby(&#x27;用户id&#x27;)[&#x27;购买时间&#x27;].min().value_counts().sort_values()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># s.tail()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df.groupby(<span class="string">&#x27;用户id&#x27;</span>)[<span class="string">&#x27;购买时间&#x27;</span>].<span class="built_in">min</span>().value_counts().plot(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-18.png"></p>
+<p><strong>图表解析</strong>：</p>
+<p>用户首购的时间分布范围比较广，从2012-7到2015-2都有，呈现稳步上升趋势。 其中：<br>2013-11-11 购买用户数：139<br>2013-12-12 购买用户数：142<br>2014-11-11 购买用户数：454<br>2014-12-12 购买用户数：221</p>
+<blockquote>
+<p>说明双十一打折促销活动对用户的吸引很大，新增用户比平时要多很多，建议运营人员多关注好的渠道，即找最少的投入，但有最好效果的渠道去做优化。后续还可以对广告页面做A/B Testing，把好的元素保留，不好的再进行优化。</p>
+</blockquote>
+</br>
+
+<h4 id="用户流失"><a href="#用户流失" class="headerlink" title="用户流失"></a><strong>用户流失</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户流失 -- 最后一次购买</span></span><br><span class="line"></span><br><span class="line">df.groupby(<span class="string">&#x27;用户id&#x27;</span>)[<span class="string">&#x27;购买时间&#x27;</span>].<span class="built_in">max</span>().value_counts().plot(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-19.png"></p>
+<p><strong>图表解析</strong>：最后一次购买和第一次购买图形很类似，原因应该是大部分用户就进行一次消费<br></br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证大部分用户就进行一次消费</span></span><br><span class="line"></span><br><span class="line">user_lv = group_user[<span class="string">&#x27;购买时间&#x27;</span>].agg([<span class="string">&#x27;min&#x27;</span>,<span class="string">&#x27;max&#x27;</span>])</span><br><span class="line">(user_lv[<span class="string">&#x27;min&#x27;</span>] == user_lv[<span class="string">&#x27;max&#x27;</span>]).value_counts()</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>True     29920
+False       24
+dtype: int64
+</code></pre>
+<p><strong>图表解析</strong>：有29920位用户仅消费一次，只有24位用户进行了多次消费<br></br></p>
+<h4 id="复购率"><a href="#复购率" class="headerlink" title="复购率"></a><strong>复购率</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复购率</span></span><br><span class="line"></span><br><span class="line">b_more = df.pivot_table(index = <span class="string">&#x27;用户id&#x27;</span>,columns = <span class="string">&#x27;购买月份&#x27;</span>,</span><br><span class="line">                       values = <span class="string">&#x27;购买时间&#x27;</span>,</span><br><span class="line">                       aggfunc = <span class="string">&#x27;count&#x27;</span>).fillna(<span class="number">0</span>)</span><br><span class="line">b_more.head()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-20.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据筛选</span></span><br><span class="line"></span><br><span class="line">purchase_r = b_more.applymap(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x&gt;<span class="number">1</span> <span class="keyword">else</span> np.NaN <span class="keyword">if</span> x == <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line"><span class="comment">#purchase_r.head()</span></span><br></pre></td></tr></table></figure>
+
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复购率折线图</span></span><br><span class="line"></span><br><span class="line">m = (purchase_r.<span class="built_in">sum</span>()/purchase_r.count())</span><br><span class="line">m.plot(figsize = (<span class="number">15</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/myyp/myyp-21.png"></p>
+<p><strong>图表解析</strong>：复购率最高在0.14%，可以得知大部分用户只购买一次<br></br></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><ul>
+<li><p>每月用户的消费趋势</p>
+<ul>
+<li>订单数：2013年开始到2014年年末，用户的总体消费次数（订单数）趋势呈现上升趋势。同时用户的消费波动也是相似的。6月和11月是消费高峰期。</li>
+<li>成交数量：随着阿里双11越来越被大众接受，产品成交数量也是越来越高。</li>
+<li>成交用户数：每月的消费人数和每月的订单数趋势波动基本相同。</li>
+</ul>
+</li>
+<li><p>男女婴儿产品成交数量的比例与趋势：男女婴儿的产品需求总体趋势来看是1:1。</p>
+<ul>
+<li>建议商家的计划上新的产品量可以男女平均分配。</li>
+</ul>
+</li>
+<li><p>用户个体的消费情况分析</p>
+<ul>
+<li>每位用户的成交数量的描述统计： 平均数是2，标准差是64，表明波动比较大。</li>
+<li>中位数是1，上下四分位数也是1，说明大部分用户只购买1件。</li>
+<li>最大值是10000，说明有部分刚需用户拉大了平均值。建议这批用户值得开发维护。</li>
+</ul>
+</li>
+<li><p>用户消费行为分析</p>
+<ul>
+<li>用户的第一次消费（首购）：用户首购的时间分布范围比较广，从2012-7到2015-2都有，呈现稳步上升趋势，说明新客的渠道，商家的运营做的都还可以。另外14年双11和双12同比13年上涨了56%，64%，说明打折促销活动对用户的吸引很大，新增用户环比前几月也明显增多。</li>
+<li>建议运营人员多关注好的渠道，即找最少的投入，但有最好效果的渠道去做优化。后续还可以对广告页面做A/B Testing，把好的元素保留，不好的再进行优化。</li>
+<li>用户的最后一次消费（流失），用户复购率：由于这个数据集是网上来源，有缺失，大部分用户只消费1次，所以流失和复购率不是很准。</li>
+</ul>
+</li>
+</ul>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>以上是对母婴用品数据做的一下分析与可视化，数据内容还有待挖掘。文中有任何错误，欢迎指正！感谢阅读～</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>电商项目：母婴用品购买行为分析</p><p><a href="http://example.com/2021/01/29/母婴产品数据分析/">http://example.com/2021/01/29/母婴产品数据分析/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><a href="http://example.com"><p>minzVV</p></a></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-01-29</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-23</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="recommend-area"><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2021/03/19/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90/" target="_blank">泰坦尼克号幸存者分析</a><br></span><span>  2.<a class="is-size-6" href="/2021/03/01/IMDB%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_blank">对比分析案例：IMDB电影数据分析及可视化</a><br></span><span>  3.<a class="is-size-6" href="/2020/12/29/Bigmart%20Sale/" target="_blank">大型商场销售额分析</a><br></span><span>  4.<a class="is-size-6" href="/2020/11/29/HR_Analytics/" target="_blank">员工离职原因分析</a><br></span></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/zfb.jpeg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/weixin.jpeg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/03/01/IMDB%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">对比分析案例：IMDB电影数据分析及可视化</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/12/29/Bigmart%20Sale/"><span class="level-item">大型商场销售额分析</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            language:'zh-CN',
+            id: '6451d80dcd50f5b1a042d3757ade3fa7',
+            repo: 'blog_comment',
+            owner: 'minzVV',
+            clientID: '475adee66f81ffbd3dc5',
+            clientSecret: '9231bb18bd4b221c6b2271ce8c57c4f3638b8006',
+            admin: "minzVV",
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex is-mobile" href="#项目描述"><span>项目描述</span></a></li><li><a class="is-flex is-mobile" href="#数据整理"><span>数据整理</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#字段重命名"><span>字段重命名</span></a></li><li><a class="is-flex is-mobile" href="#格式转换"><span>格式转换</span></a></li><li><a class="is-flex is-mobile" href="#字段处理"><span>字段处理</span></a></li><li><a class="is-flex is-mobile" href="#新特征生成"><span>新特征生成</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#可视化分析"><span>可视化分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#商品类型购买分析"><span>商品类型购买分析</span></a></li><li><a class="is-flex is-mobile" href="#购买时间分析"><span>购买时间分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#月份分析"><span>月份分析</span></a></li><li><a class="is-flex is-mobile" href="#季度分析"><span>季度分析</span></a></li></ul></li></ul></li><li><a class="is-flex is-mobile" href="#产品需求分析"><span>产品需求分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#购买数量对比"><span>购买数量对比</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#产品购买趋势"><span>产品购买趋势</span></a></li><li><a class="is-flex is-mobile" href="#商品类别需求"><span>商品类别需求</span></a></li></ul></li></ul></li><li><a class="is-flex is-mobile" href="#用户分析"><span>用户分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#消费分析"><span>消费分析</span></a></li><li><a class="is-flex is-mobile" href="#行为分析"><span>行为分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#用户首购"><span>用户首购</span></a></li><li><a class="is-flex is-mobile" href="#用户流失"><span>用户流失</span></a></li><li><a class="is-flex is-mobile" href="#复购率"><span>复购率</span></a></li></ul></li></ul></li><li><a class="is-flex is-mobile" href="#总结"><span>总结</span></a></li><li><a class="is-flex is-mobile" href="#写在最后"><span>写在最后</span></a></li></ul></div></div><style>.menu-list > li > a.is-active + .menu-list { display: block; }.menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png" alt="minzVV"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">minzVV</p><p class="is-size-6 is-block">但行好事，莫问前程</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国广东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/minzVV" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/minzVV"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wong_minz@163.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Next" href="https://minzVV.github.io/minzVV.io"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE/"><span class="tag">数据分析项目</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL%E7%BB%83%E4%B9%A0%E9%A2%98/"><span class="tag">MySQL练习题</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python%E5%BA%93/"><span class="tag">Python库</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><span class="tag">python数据类型</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E8%A1%A8/"><span class="tag">可视化图表</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"><span class="tag">名词解析</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"><span class="tag">算法基础</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B/"><span class="tag">二八定律</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/"><span class="tag">对比分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83/"><span class="tag">数据分布</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C/"><span class="tag">正态性检验</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/"><span class="tag">相关性分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><span class="tag">统计分析</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">icarus</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/removeif/hexo-theme-amazing" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">amazing</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/minzVV/blog" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">myblog_theme</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟缓存...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-29T12:41:02.000Z">2021-05-29</time></p><p class="title"><a href="/2021/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BB%E6%89%BE%E7%AC%ACN%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE/">每日一题 - 寻找第N高的数据</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-28T14:33:36.000Z">2021-05-28</time></p><p class="title"><a href="/2021/05/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9F%A5%E6%89%BE%E9%87%8D%E5%A4%8D%E5%80%BC/">每日一题 - 查找重复值</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-26T06:58:34.000Z">2021-05-26</time></p><p class="title"><a href="/2021/05/26/blog_post/">博客文章属性</a></p><p class="categories"><a href="/categories/blog/">blog</a> / <a href="/categories/blog/post/">post</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-19T12:41:02.000Z">2021-03-19</time></p><p class="title"><a href="/2021/03/19/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90/">泰坦尼克号幸存者分析</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%93%8D/">项目实操</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-01T12:41:02.000Z">2021-03-01</time></p><p class="title"><a href="/2021/03/01/IMDB%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">对比分析案例：IMDB电影数据分析及可视化</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%93%8D/">项目实操</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/SQL/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/blog/post/"><span class="level-start"><span class="level-item">post</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/python/Matplotlib/"><span class="level-start"><span class="level-item">Matplotlib</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/Seaborn/"><span class="level-start"><span class="level-item">Seaborn</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/data-type/"><span class="level-start"><span class="level-item">data_type</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="level-start"><span class="level-item">数据分析</span></span><span class="level-end"><span class="level-item tag">15</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%8F%AF%E8%A7%86%E5%8C%96/"><span class="level-start"><span class="level-item">可视化</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a><p class="size-small"><span>&copy; 2021 minzVV</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a> &amp; <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">Amazing</a> <br><span>© <a href="http://www.beian.miit.gov.cn/" target="_blank">川ICP备88888888号-8（测试）</a><br></span><span>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br />&nbsp;&nbsp;&nbsp;&nbsp;方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br /></span><span><span id="statistic-times">loading...</span><script>function createTime(time) {
+            var n = new Date(time);
+            now.setTime(now.getTime() + 250),
+                days = (now - n) / 1e3 / 60 / 60 / 24,
+                dnum = Math.floor(days),
+                hours = (now - n) / 1e3 / 60 / 60 - 24 * dnum,
+                hnum = Math.floor(hours),
+            1 == String(hnum).length && (hnum = "0" + hnum),
+                minutes = (now - n) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+                mnum = Math.floor(minutes),
+            1 == String(mnum).length && (mnum = "0" + mnum),
+                seconds = (now - n) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+                snum = Math.round(seconds),
+            1 == String(snum).length && (snum = "0" + snum),
+                document.getElementById("statistic-times").innerHTML = "❤️本站自 <strong>"+time.split(" ")[0].replace(/\//g,".")+"</strong> 已运行 <strong>" + dnum + "</strong> 天 <strong>" + hnum + "</strong> 小时 <strong>" + mnum + "</strong> 分 <strong>" + snum + "</strong> 秒！❤️";
+        }var now = new Date();setInterval("createTime('2021/03/15 00:00:00')", 250,"");</script><br></span><div class="size-small"><span>❤️感谢 <strong><span id="busuanzi_value_site_uv">99+</span></strong> 小伙伴的 <strong><span id="busuanzi_value_site_pv">99+</span></strong> 次光临！❤️</span></div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/minzVV/hexo-theme-amazing"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);})</script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        function loadMathJax() { //加载mathjax
+            $.getScript("//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML", function () {
+                MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\(', '\)']] } });
+                var math = document.getElementsByClassName("entry-content")[0];
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]);
+            });
+        };
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+            if(typeof loadBanner == 'function'){
+                loadBanner();
+            }
+        });</script></body></html>
