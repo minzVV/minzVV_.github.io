@@ -1,0 +1,2628 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>会员用户消费行为浅度挖掘 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="摘要通过会员消费数据，分析消费趋势、复购率以及回购率等;并给会员用户进行分层，给后续工作提供数据依据～"><meta property="og:type" content="blog"><meta property="og:title" content="minz VV"><meta property="og:url" content="https://minzvv.github.io/"><meta property="og:site_name" content="minz VV"><meta property="og:description" content="摘要通过会员消费数据，分析消费趋势、复购率以及回购率等;并给会员用户进行分层，给后续工作提供数据依据～"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><meta property="article:published_time" content="2021-04-14T12:41:02.000Z"><meta property="article:modified_time" content="2021-06-26T04:50:02.709Z"><meta property="article:author" content="minzVV"><meta property="article:tag" content="数据分析项目"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/04/14/%E5%81%A5%E8%BA%AB%E5%B9%B3%E5%8F%B0%E4%BC%9A%E5%91%98%E7%94%A8%E6%88%B7%E6%B6%88%E8%B4%B9%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/"},"headline":"Hexo","image":["https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_15_1.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_16_1.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_17_1.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_18_1.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_20_1.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_21_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_22_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_23_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_28_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_29_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_35_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_36_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_37_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_45_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_49_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_50_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_53_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_57_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_58_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_64_0.png","https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_67_0.png"],"datePublished":"2021-04-14T12:41:02.000Z","dateModified":"2021-06-26T04:50:02.709Z","author":{"@type":"Person","name":"minzVV"},"description":"摘要通过会员消费数据，分析消费趋势、复购率以及回购率等;并给会员用户进行分层，给后续工作提供数据依据～"}</script><link rel="canonical" href="http://example.com/2021/04/14/%E5%81%A5%E8%BA%AB%E5%B9%B3%E5%8F%B0%E4%BC%9A%E5%91%98%E7%94%A8%E6%88%B7%E6%B6%88%E8%B4%B9%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/favicon.png"><meta name="referrer" content="no-referrer-when-downgrade"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><!--!--><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2021-04-14  <a class="commentCountImg" href="/2021/04/14/%E5%81%A5%E8%BA%AB%E5%B9%B3%E5%8F%B0%E4%BC%9A%E5%91%98%E7%94%A8%E6%88%B7%E6%B6%88%E8%B4%B9%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/#comment-container"><span class="display-none-class">aed28ed1a3fa75b4df23a90a9080a0fa</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="aed28ed1a3fa75b4df23a90a9080a0fa">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>36 分钟  <i class="fas fa-pencil-alt"> </i>5.4 k</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">会员用户消费行为浅度挖掘</h1><div class="content"><blockquote>
+<p>摘要<br>通过会员消费数据，分析消费趋势、复购率以及回购率等;并给会员用户进行分层，给后续工作提供数据依据～</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h2 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h2><p><strong>项目名称</strong>：健身平台会员用户消费行为分析</p>
+<p><strong>数据来源</strong>：数据集来源于网络，是某健身房2019年3月至2020年2月会员消费数据，数据源格式为.xls</p>
+<p><strong>字段说明</strong></p>
+<blockquote>
+<p>user_id ：用户ID</p>
+<p>order_dt ：购买日期</p>
+<p>order_products ：购买数量</p>
+<p>order_amount ：购买金额</p>
+</blockquote>
+<p><strong>项目目的</strong>：</p>
+<ul>
+<li>月度趋势分析</li>
+<li>个体消费分析</li>
+<li>复购率 &amp; 回购率</li>
+<li>用户分层</li>
+<li>用户生命周期</li>
+</ul>
+<h2 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a><strong>数据导入</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">os.chdir(<span class="string">&#x27;/home/min/data&#x27;</span>)</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可视化风格设定</span></span><br><span class="line"></span><br><span class="line">large = <span class="number">22</span></span><br><span class="line">med = <span class="number">16</span></span><br><span class="line">small = <span class="number">13</span></span><br><span class="line">params = &#123;<span class="string">&#x27;axes.titlesize&#x27;</span> : large,</span><br><span class="line">         <span class="string">&#x27;legend.fontsize&#x27;</span> : med,</span><br><span class="line">         <span class="string">&#x27;figure.figsize&#x27;</span> : (<span class="number">19</span>,<span class="number">10</span>),</span><br><span class="line">         <span class="string">&#x27;axes.labelsize&#x27;</span> : med,</span><br><span class="line">         <span class="string">&#x27;axes.titlesize&#x27;</span> : med,</span><br><span class="line">         <span class="string">&#x27;xtick.labelsize&#x27;</span> : med,</span><br><span class="line">         <span class="string">&#x27;ytick.labelsize&#x27;</span> : med,</span><br><span class="line">         <span class="string">&#x27;figure.titlesize&#x27;</span> : large&#125;</span><br><span class="line">plt.rcParams.update(params)</span><br><span class="line">plt.style.use(<span class="string">&#x27;seaborn-pastel&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_excel(<span class="string">&#x27;cuscapi.xls&#x27;</span>)</span><br><span class="line">data.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>order_dt</th>
+      <th>order_products</th>
+      <th>order_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>vs30033073</td>
+      <td>2020-01-17</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>vs30026748</td>
+      <td>2019-12-04</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>vs10000716</td>
+      <td>2019-07-05</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>vs30032785</td>
+      <td>2019-08-21</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>vs10000716</td>
+      <td>2019-10-24</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>vs30033073</td>
+      <td>2019-11-29</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>vs10000621</td>
+      <td>2019-07-19</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>vs30029475</td>
+      <td>2019-05-17</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>vs30030664</td>
+      <td>2019-11-11</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>vs10000773</td>
+      <td>2019-11-25</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2013 entries, 0 to 2012
+Data columns (total 4 columns):
+user_id           2013 non-null object
+order_dt          2013 non-null datetime64[ns]
+order_products    2013 non-null int64
+order_amount      2013 non-null int64
+dtypes: datetime64[ns](1), int64(2), object(1)
+memory usage: 63.0+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">&#x27;display.float_format&#x27;</span>, <span class="keyword">lambda</span> x : <span class="string">&#x27;%.2f&#x27;</span> % x)</span><br><span class="line"></span><br><span class="line">data.describe()</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_products</th>
+      <th>order_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>2013.00</td>
+      <td>2013.00</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>1.47</td>
+      <td>22.90</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>0.91</td>
+      <td>94.94</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>1.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>1.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>1.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>2.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>12.00</td>
+      <td>2650.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>用户平均每笔订单购买1.5个商品，标准差为0.9，波动性不大</li>
+<li>中位数在1个商品，75分位数在2个产品，说明绝大多数订单的购买数量都不多</li>
+<li>平均每笔消费金额为22.9元，标准差约为95，中位数为20，平均数大于中位数，说明多数会员消费金额集中在小金额范围，而小部分会员贡献了大额消费，符号二八法则。</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据用户id进行分组汇总</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user_group = data.groupby(<span class="string">&#x27;user_id&#x27;</span>).<span class="built_in">sum</span>()</span><br><span class="line">user_group.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_products</th>
+      <th>order_amount</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>9</td>
+      <td>189</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>214</td>
+      <td>5704</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>250</td>
+      <td>2616</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>vs10000757</td>
+      <td>75</td>
+      <td>1104</td>
+    </tr>
+    <tr>
+      <td>vs10000773</td>
+      <td>23</td>
+      <td>460</td>
+    </tr>
+    <tr>
+      <td>vs10000775</td>
+      <td>8</td>
+      <td>2730</td>
+    </tr>
+    <tr>
+      <td>vs10000788</td>
+      <td>7</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <td>vs10000794</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</br>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user_group.describe()</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_products</th>
+      <th>order_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>247.00</td>
+      <td>247.00</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>11.97</td>
+      <td>186.59</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>36.70</td>
+      <td>641.12</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>1.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>2.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>2.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>3.00</td>
+      <td>66.00</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>277.00</td>
+      <td>5704.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>用户平均购买数量约为12个商品，最多购买了277个商品</li>
+<li>平均消费金额约为187元，标准差为641，中位数为0，也说明了存在小部分会员购买了大数量商品的高消费情况</li>
+</ul>
+</br>
+
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a><strong>数据处理</strong></h2><h3 id="类型转换-amp-新字段提取"><a href="#类型转换-amp-新字段提取" class="headerlink" title="类型转换 &amp; 新字段提取"></a><strong>类型转换 &amp; 新字段提取</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 类型转换 &amp; 新字段提取(月份)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data[<span class="string">&#x27;order_dt&#x27;</span>] = pd.to_datetime(data[<span class="string">&#x27;order_dt&#x27;</span>])</span><br><span class="line">data[<span class="string">&#x27;month&#x27;</span>] = data[<span class="string">&#x27;order_dt&#x27;</span>].astype(<span class="string">&#x27;datetime64[M]&#x27;</span>)</span><br><span class="line">data.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>order_dt</th>
+      <th>order_products</th>
+      <th>order_amount</th>
+      <th>month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>vs30033073</td>
+      <td>2020-01-17</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2020-01-01</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>vs30026748</td>
+      <td>2019-12-04</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-12-01</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>vs10000716</td>
+      <td>2019-07-05</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-07-01</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>vs30032785</td>
+      <td>2019-08-21</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2019-08-01</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>vs10000716</td>
+      <td>2019-10-24</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-10-01</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>vs30033073</td>
+      <td>2019-11-29</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-11-01</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>vs10000621</td>
+      <td>2019-07-19</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-07-01</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>vs30029475</td>
+      <td>2019-05-17</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-05-01</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>vs30030664</td>
+      <td>2019-11-11</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-11-01</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>vs10000773</td>
+      <td>2019-11-25</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2019-11-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查空值</span></span><br><span class="line"></span><br><span class="line">data.apply(<span class="keyword">lambda</span> x:<span class="built_in">sum</span>(x.isnull()))</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>user_id           0
+order_dt          0
+order_products    0
+order_amount      0
+month             0
+dtype: int64
+</code></pre>
+</br>
+
+<h2 id="用户消费分析"><a href="#用户消费分析" class="headerlink" title="用户消费分析"></a><strong>用户消费分析</strong></h2><h3 id="月度总趋势分析"><a href="#月度总趋势分析" class="headerlink" title="月度总趋势分析"></a><strong>月度总趋势分析</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 月度消费</span></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;month&#x27;</span>).order_amount.<span class="built_in">sum</span>().plot()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;月份&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;消费金额(元)&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;不同月份的用户消费金额&#x27;</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_15_1.png"></p>
+<p><strong>图表解析</strong>：按月份统计每个月的商品消费金额，可以看出，各个月份销量波动起伏较大。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 月度产品购买数量</span></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;month&#x27;</span>).order_products.<span class="built_in">sum</span>().plot()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;月份&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;产品个数&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;不同月份的产品购买数量&#x27;</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_16_1.png"></p>
+<p><strong>图表解析</strong>：每月的产品购买量呈现为前7个月快速上升，而后5个月呈整体下降的趋势。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 月度消费次数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;month&#x27;</span>).user_id.count().plot()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;月份&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;消费次数&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;不同月份的用户消费次数&#x27;</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_17_1.png"></p>
+<p><strong>图表解析</strong>：消费次数在前四个月呈上升趋势，在六月份达到顶峰，而后呈下降趋势。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 月度消费人数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;month&#x27;</span>).user_id.nunique().plot()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;月份&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;消费人数&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;不同月份的消费人数&#x27;</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_18_1.png"></p>
+<p><strong>图表解析</strong>：相比而言，每月的消费人数大多小于每月的消费人数，而在7月份消费人数达到顶峰90人，后续月份的消费人数持续下降。</p>
+</br>
+
+<h3 id="用户个体消费趋势分析"><a href="#用户个体消费趋势分析" class="headerlink" title="用户个体消费趋势分析"></a><strong>用户个体消费趋势分析</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户消费金额 &amp; 产品个数</span></span><br><span class="line"></span><br><span class="line">user_consume = data.groupby(<span class="string">&#x27;user_id&#x27;</span>).<span class="built_in">sum</span>()</span><br><span class="line">plt.scatter(user_consume[<span class="string">&#x27;order_products&#x27;</span>],user_consume[<span class="string">&#x27;order_amount&#x27;</span>],c = <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;消费产品个数&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;消费金额&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;用户消费金额 &amp; 产品个数散点图&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_20_1.png"></p>
+<p><strong>图表解析</strong>：可以看到，图中的离散点较多，订单消费金额和订单商品数量的关系不呈线性，用户消费规律性不强，而且订单的极值较多。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 购买数量分布 &amp; 购买金额分布</span></span><br><span class="line"></span><br><span class="line">consume_products = user_consume[<span class="string">&#x27;order_products&#x27;</span>]</span><br><span class="line">consume_amount = user_consume[<span class="string">&#x27;order_amount&#x27;</span>]</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize = (<span class="number">19</span>,<span class="number">9</span>))</span><br><span class="line">fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">consume_products.hist(bins = <span class="number">10</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;用户购买产品数量分布&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;购买数量&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fig.add_subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">consume_amount.hist(bins = <span class="number">10</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;用户购买金额分布&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;购买金额&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_21_0.png"></p>
+<p><strong>图表解析</strong>：大部分用户消费能力不高，图中可知，购买数量大多在50以内，而消费金额大多为1000以内。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首次消费会员分布</span></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;user_id&#x27;</span>).month.<span class="built_in">min</span>().value_counts().plot()</span><br><span class="line">plt.title(<span class="string">&#x27;首次消费会员数分布&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;首次消费时间&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;会员数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_22_0.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最后一次消费会员数分析</span></span><br><span class="line"></span><br><span class="line">data.groupby(<span class="string">&#x27;user_id&#x27;</span>).month.<span class="built_in">max</span>().value_counts().plot()</span><br><span class="line">plt.title(<span class="string">&#x27;最后一次消费会员数分布&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;最后一次消费时间&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;会员数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_23_0.png"></p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首次消费与最后一次消费时间间隔 -- 会员流失情况</span></span><br><span class="line"></span><br><span class="line">(data.groupby(<span class="string">&#x27;user_id&#x27;</span>)[<span class="string">&#x27;month&#x27;</span>].agg(&#123;<span class="string">&#x27;num1&#x27;</span>:<span class="string">&#x27;min&#x27;</span>,<span class="string">&#x27;num2&#x27;</span>:<span class="string">&#x27;max&#x27;</span>&#125;).num2 - data.groupby(<span class="string">&#x27;user_id&#x27;</span>)[<span class="string">&#x27;month&#x27;</span>].agg(&#123;<span class="string">&#x27;num1&#x27;</span>:<span class="string">&#x27;min&#x27;</span>,<span class="string">&#x27;num2&#x27;</span>:<span class="string">&#x27;max&#x27;</span>&#125;).num1).value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0 days      177
+31 days      24
+61 days       6
+92 days       6
+122 days      6
+337 days      5
+30 days       4
+306 days      3
+153 days      3
+184 days      3
+62 days       2
+123 days      2
+215 days      2
+245 days      2
+275 days      1
+276 days      1
+dtype: int64
+</code></pre>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>有大量用户的第一次消费集中在7、8月份，有可能是活动引入了大量新用户所导致</li>
+<li>相比较最后一次消费，可以观察到大部分用户都在首次消费一个月内流失掉</li>
+</ul>
+</br>
+
+<h3 id="复购率"><a href="#复购率" class="headerlink" title="复购率"></a><strong>复购率</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 每位会员各月消费次数</span></span><br><span class="line"></span><br><span class="line">pivoted_counts = data.pivot_table(index=<span class="string">&#x27;user_id&#x27;</span>,columns=<span class="string">&#x27;month&#x27;</span>,values=<span class="string">&#x27;order_dt&#x27;</span>,</span><br><span class="line">                                 aggfunc=<span class="string">&#x27;count&#x27;</span>).fillna(<span class="number">0</span>)</span><br><span class="line">columns_month = data.month.sort_values().unique()</span><br><span class="line">pivoted_counts.columns = columns_month</span><br><span class="line">pivoted_counts.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>2.00</td>
+      <td>0.00</td>
+      <td>3.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>6.00</td>
+      <td>17.00</td>
+      <td>19.00</td>
+      <td>20.00</td>
+      <td>17.00</td>
+      <td>5.00</td>
+      <td>2.00</td>
+      <td>18.00</td>
+      <td>18.00</td>
+      <td>21.00</td>
+      <td>16.00</td>
+      <td>10.00</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>14.00</td>
+      <td>19.00</td>
+      <td>24.00</td>
+      <td>12.00</td>
+      <td>30.00</td>
+      <td>15.00</td>
+      <td>12.00</td>
+      <td>5.00</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复购定义 ：在某时间段内消费两次或两次以上的会员在总消费会员中的占比</span></span><br><span class="line"><span class="comment"># 时间段 ：月 。 如果一个会员在同一天下了两笔订单，也算作复购用户</span></span><br><span class="line"><span class="comment"># 消费两次及以上记为1，仅消费一次记为0，没有消费记为NaN</span></span><br><span class="line"></span><br><span class="line">pivoted_counts.transf=pivoted_counts.applymap(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x&gt;<span class="number">1</span> <span class="keyword">else</span> np.NaN <span class="keyword">if</span> x==<span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">pivoted_counts.transf.head()</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>1.00</td>
+      <td>nan</td>
+      <td>1.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>1.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户复购率分布</span></span><br><span class="line"></span><br><span class="line">month_counts_rerate = pivoted_counts.transf.<span class="built_in">sum</span>() / pivoted_counts.transf.count()</span><br><span class="line">plt.plot(month_counts_rerate)</span><br><span class="line">plt.title(<span class="string">&#x27;每月会员复购情况分析&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分比&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_28_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>3月份至6月份新用户加入数量较少，复购率上升</li>
+<li>在大量新用户加入且大量用户流失的8月份复购率达到最低点</li>
+<li>在进行了一波用户流失后，剩余基本为忠实客户，从而使得复购率呈持续上升趋势</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 消费人数和二次消费及以上的用户对比</span></span><br><span class="line"></span><br><span class="line">a,b = plt.subplots(figsize=(<span class="number">19</span>,<span class="number">9</span>))</span><br><span class="line">b.plot(pivoted_counts.transf.count())</span><br><span class="line">b.plot(pivoted_counts.transf.<span class="built_in">sum</span>())</span><br><span class="line">legends = [<span class="string">&#x27;消费人数&#x27;</span>,<span class="string">&#x27;二次消费及以上会员人数&#x27;</span>]</span><br><span class="line">plt.title(<span class="string">&#x27;每月消费人数和二次消费及以上会员人数对比&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;用户数&#x27;</span>)</span><br><span class="line">plt.legend(legends)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_29_0.png"></p>
+<p><strong>图表解析</strong>：可以看出用户数相差最多的时间节点为八月份，与八月份用户流失有极大关系。但整体趋势保持一致。</p>
+</br>
+
+<h3 id="回购率"><a href="#回购率" class="headerlink" title="回购率"></a><strong>回购率</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 回购率 -- 某一时间段内消费的用户，在下一时间段仍然消费的占比</span></span><br><span class="line"><span class="comment"># 实例：如1月消费用户1000,1000中有300个2月依然消费，回购率为30%</span></span><br><span class="line"></span><br><span class="line">pivoted_amount = data.pivot_table(index=<span class="string">&#x27;user_id&#x27;</span>,columns=<span class="string">&#x27;month&#x27;</span>,</span><br><span class="line">                                 values=<span class="string">&#x27;order_amount&#x27;</span>,aggfunc=<span class="string">&#x27;mean&#x27;</span>).fillna(<span class="number">0</span>)</span><br><span class="line">pivoted_amount.columns = columns_month</span><br><span class="line">pivoted_amount.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>25.00</td>
+      <td>0.00</td>
+      <td>19.67</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>80.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>414.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>17.65</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>20.00</td>
+      <td>41.84</td>
+      <td>10.83</td>
+      <td>15.00</td>
+      <td>15.33</td>
+      <td>20.00</td>
+      <td>20.00</td>
+      <td>20.20</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>20.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计有回购的会员人数</span></span><br><span class="line"></span><br><span class="line">pivoted_purchase = pivoted_amount.applymap(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x&gt;<span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">pivoted_purchase.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">purchase_reture</span>(<span class="params">data</span>):</span></span><br><span class="line">    status = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>):</span><br><span class="line">        <span class="keyword">if</span> data[i] &gt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> data[i+<span class="number">1</span>] &gt;= <span class="number">1</span>:</span><br><span class="line">                status.append(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                status.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            status.append(np.NaN)</span><br><span class="line">    status.append(np.NaN)</span><br><span class="line">    <span class="keyword">return</span> pd.Series(status)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pivoted_purchase_reture = pivoted_purchase.apply(purchase_reture,axis = <span class="number">1</span>)</span><br><span class="line">pivoted_purchase_reture.columns = columns_month</span><br><span class="line">pivoted_purchase_reture.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pivoted_purchase_reture_rate = pivoted_purchase_reture.<span class="built_in">sum</span>() / pivoted_purchase_reture.count()</span><br><span class="line">plt.plot(pivoted_purchase_reture_rate)</span><br><span class="line">plt.title(<span class="string">&#x27;各月份用户回购率分析&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分比&#x27;</span>)</span><br><span class="line">plt.xticks(rotation = <span class="number">60</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_35_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>用户回购率在4月份达到顶峰，而后呈下降趋势，至8月份到达最低点，原因有可能是用户在4月份至八月份的持续流失所导致</li>
+<li>八月份往后，回购率由于剩余的忠实用户所呈上升趋势</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a,b = plt.subplots(figsize = (<span class="number">19</span>,<span class="number">10</span>))</span><br><span class="line">b.plot(pivoted_purchase_reture.count())</span><br><span class="line">b.plot(pivoted_purchase_reture.<span class="built_in">sum</span>())</span><br><span class="line">legends = [<span class="string">&#x27;每月消费人数&#x27;</span>,<span class="string">&#x27;每月回购人数&#x27;</span>]</span><br><span class="line">b.legend(legends)</span><br><span class="line">plt.title(<span class="string">&#x27;各月份消费人数 &amp; 回购人数&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;用户数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_36_0.png"></p>
+<p><strong>图表解析</strong>：回购人数变化趋势基本与每月消费人数变化趋势保持一致。</p>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a,b = plt.subplots(figsize = (<span class="number">19</span>,<span class="number">10</span>))</span><br><span class="line">b.plot(pivoted_purchase_reture_rate)</span><br><span class="line">b.plot(month_counts_rerate)</span><br><span class="line">legends = [<span class="string">&#x27;每月回购率&#x27;</span>,<span class="string">&#x27;每月复购率&#x27;</span>]</span><br><span class="line">b.legend(legends)</span><br><span class="line">plt.title(<span class="string">&#x27;每月回购率 &amp; 每月复购率&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分比&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_37_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>大体上来看，每月用户的复购率高于回购率，波动性也比较大</li>
+</ul>
+</br>
+
+<h2 id="用户分层"><a href="#用户分层" class="headerlink" title="用户分层"></a><strong>用户分层</strong></h2><h3 id="RFM-分层"><a href="#RFM-分层" class="headerlink" title="RFM 分层"></a><strong>RFM 分层</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">user_rfm = data.pivot_table(index=<span class="string">&#x27;user_id&#x27;</span>,</span><br><span class="line">                           values=[<span class="string">&#x27;order_dt&#x27;</span>,<span class="string">&#x27;order_products&#x27;</span>,<span class="string">&#x27;order_amount&#x27;</span>],</span><br><span class="line">                           aggfunc=&#123;<span class="string">&#x27;order_dt&#x27;</span>:<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;order_products&#x27;</span>:<span class="string">&#x27;count&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;order_amount&#x27;</span>:<span class="string">&#x27;sum&#x27;</span>&#125;)</span><br><span class="line">user_rfm[<span class="string">&#x27;order_dt&#x27;</span>] = pd.to_datetime(user_rfm[<span class="string">&#x27;order_dt&#x27;</span>]).dt.normalize()</span><br><span class="line">user_rfm.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_amount</th>
+      <th>order_dt</th>
+      <th>order_products</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>189</td>
+      <td>2019-12-27</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>5704</td>
+      <td>2020-02-28</td>
+      <td>169</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0</td>
+      <td>2019-07-23</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>2616</td>
+      <td>2020-02-28</td>
+      <td>131</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>20</td>
+      <td>2019-03-15</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_rfm[<span class="string">&#x27;period&#x27;</span>] = (user_rfm.order_dt.<span class="built_in">max</span>() - user_rfm.order_dt) / np.timedelta64(<span class="number">1</span>,<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line">user_rfm = user_rfm.rename(columns=&#123;<span class="string">&#x27;period&#x27;</span>:<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;order_products&#x27;</span>:<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;order_amount&#x27;</span>:<span class="string">&#x27;M&#x27;</span>&#125;)</span><br><span class="line">user_rfm.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>order_dt</th>
+      <th>F</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>189</td>
+      <td>2019-12-27</td>
+      <td>6</td>
+      <td>63.00</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>5704</td>
+      <td>2020-02-28</td>
+      <td>169</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0</td>
+      <td>2019-07-23</td>
+      <td>2</td>
+      <td>220.00</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>2616</td>
+      <td>2020-02-28</td>
+      <td>131</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>20</td>
+      <td>2019-03-15</td>
+      <td>1</td>
+      <td>350.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分层函数定义</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rfm_func</span>(<span class="params">x</span>):</span></span><br><span class="line">    level = x.apply(<span class="keyword">lambda</span> x:<span class="string">&#x27;1&#x27;</span> <span class="keyword">if</span> x&gt;=<span class="number">0</span> <span class="keyword">else</span> <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">    label = level.R + level.F + level.M</span><br><span class="line">    d = &#123;<span class="string">&#x27;111&#x27;</span>:<span class="string">&#x27;高价值客户&#x27;</span>,<span class="string">&#x27;011&#x27;</span>:<span class="string">&#x27;重点保持客户&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;101&#x27;</span>:<span class="string">&#x27;重点发展客户&#x27;</span>,<span class="string">&#x27;001&#x27;</span>:<span class="string">&#x27;重点挽留客户&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;110&#x27;</span>:<span class="string">&#x27;一般价值客户&#x27;</span>,<span class="string">&#x27;010&#x27;</span>:<span class="string">&#x27;一般保持客户&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;100&#x27;</span>:<span class="string">&#x27;一般发展客户&#x27;</span>,<span class="string">&#x27;000&#x27;</span>:<span class="string">&#x27;潜在客户&#x27;</span>&#125;</span><br><span class="line">    result = d[label]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">user_rfm[<span class="string">&#x27;label&#x27;</span>] = user_rfm[[<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;M&#x27;</span>]].apply(<span class="keyword">lambda</span> x:x-x.mean()).apply(rfm_func,</span><br><span class="line">                                                                            axis = <span class="number">1</span>)</span><br><span class="line">user_rfm.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>order_dt</th>
+      <th>F</th>
+      <th>R</th>
+      <th>label</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>189</td>
+      <td>2019-12-27</td>
+      <td>6</td>
+      <td>63.00</td>
+      <td>重点挽留客户</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>5704</td>
+      <td>2020-02-28</td>
+      <td>169</td>
+      <td>0.00</td>
+      <td>重点保持客户</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0</td>
+      <td>2019-07-23</td>
+      <td>2</td>
+      <td>220.00</td>
+      <td>一般发展客户</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>2616</td>
+      <td>2020-02-28</td>
+      <td>131</td>
+      <td>0.00</td>
+      <td>重点保持客户</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>20</td>
+      <td>2019-03-15</td>
+      <td>1</td>
+      <td>350.00</td>
+      <td>一般发展客户</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user_rfm.groupby(<span class="string">&#x27;label&#x27;</span>).count()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>order_dt</th>
+      <th>F</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>一般保持客户</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>一般发展客户</td>
+      <td>146</td>
+      <td>146</td>
+      <td>146</td>
+      <td>146</td>
+    </tr>
+    <tr>
+      <td>潜在客户</td>
+      <td>63</td>
+      <td>63</td>
+      <td>63</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>重点保持客户</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>重点发展客户</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>重点挽留客户</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>高价值客户</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user_rfm.groupby(<span class="string">&#x27;label&#x27;</span>).<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>F</th>
+      <th>R</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>一般保持客户</td>
+      <td>352</td>
+      <td>34</td>
+      <td>98.00</td>
+    </tr>
+    <tr>
+      <td>一般发展客户</td>
+      <td>2653</td>
+      <td>272</td>
+      <td>28793.00</td>
+    </tr>
+    <tr>
+      <td>潜在客户</td>
+      <td>1723</td>
+      <td>125</td>
+      <td>6377.00</td>
+    </tr>
+    <tr>
+      <td>重点保持客户</td>
+      <td>32494</td>
+      <td>1416</td>
+      <td>846.00</td>
+    </tr>
+    <tr>
+      <td>重点发展客户</td>
+      <td>2091</td>
+      <td>5</td>
+      <td>575.00</td>
+    </tr>
+    <tr>
+      <td>重点挽留客户</td>
+      <td>2919</td>
+      <td>9</td>
+      <td>165.00</td>
+    </tr>
+    <tr>
+      <td>高价值客户</td>
+      <td>3856</td>
+      <td>152</td>
+      <td>1429.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字体管理</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> font_manager <span class="keyword">as</span> fm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 颜色</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> cm</span><br><span class="line"></span><br><span class="line">proptease = fm.FontProperties()</span><br><span class="line">proptease.set_size(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">labelindex = user_rfm.groupby(<span class="string">&#x27;label&#x27;</span>).count().index</span><br><span class="line">labelvalues = user_rfm.groupby(<span class="string">&#x27;label&#x27;</span>)[<span class="string">&#x27;M&#x27;</span>].count().tolist()</span><br><span class="line">s = pd.Series(labelvalues,index=labelindex)</span><br><span class="line">labels = s.index</span><br><span class="line">sizes = s.values</span><br><span class="line"></span><br><span class="line">explode = (<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.1</span>,<span class="number">0.1</span>,<span class="number">0.2</span>)</span><br><span class="line">fig,axes = plt.subplots(<span class="number">1</span>,<span class="number">2</span>,figsize = (<span class="number">24</span>,<span class="number">12</span>))</span><br><span class="line">ax1,ax2 = axes.ravel()</span><br><span class="line"></span><br><span class="line">colors = cm.rainbow(np.arange(<span class="built_in">len</span>(sizes)) / <span class="built_in">len</span>(sizes))</span><br><span class="line">patches,texts,autotests = ax1.pie(sizes,labels = labels,autopct = <span class="string">&#x27;%1.0f%%&#x27;</span>,</span><br><span class="line">                                 explode = explode,shadow = <span class="literal">False</span>, startangle = <span class="number">170</span>,</span><br><span class="line">                                 colors = colors,labeldistance = <span class="number">1.2</span>,</span><br><span class="line">                                 pctdistance = <span class="number">1.05</span>,radius = <span class="number">1.5</span>)</span><br><span class="line">ax1.axis(<span class="string">&#x27;equal&#x27;</span>)</span><br><span class="line">plt.setp(texts,fontproperties = proptease)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> autotests:</span><br><span class="line">    i.set_size(<span class="string">&#x27;larger&#x27;</span>)</span><br><span class="line">ax1.set_title(<span class="string">&#x27;用户分层结构图&#x27;</span>,loc = <span class="string">&#x27;center&#x27;</span>,fontsize = <span class="number">32</span>)</span><br><span class="line">ax2.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">ax2.legend(patches,labels,loc = <span class="string">&#x27;center left&#x27;</span>,fontsize = <span class="number">20</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_45_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>由图可知，一般发展客户占了较大的占比，为59%</li>
+<li>潜在客户占比为26%，位居第二，而重点挽留客户以及重点发展客户均只占1%，需要对潜在客户进行引导及转化为忠实用户</li>
+</ul>
+</br>
+
+<h3 id="根据活跃度分层"><a href="#根据活跃度分层" class="headerlink" title="根据活跃度分层"></a><strong>根据活跃度分层</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据消费行为，简单划分为：新用户、活跃用户、不活跃用户、回流用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新用户 -- 第一次消费</span></span><br><span class="line"><span class="comment"># 活跃用户 -- 老客户，在某一时间区间有过消费</span></span><br><span class="line"><span class="comment"># 不活跃用户 -- 在设定时间区间内没有消费的老客户</span></span><br><span class="line"><span class="comment"># 回流用户 -- 在上一设定时间区间内没有消费，在当前时间区间内有消费</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 时间区间设定为以月为单位统计</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">active_stauts</span>(<span class="params">data</span>):</span></span><br><span class="line">    status = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">12</span>):</span><br><span class="line">        <span class="comment"># 本月没有消费</span></span><br><span class="line">        <span class="keyword">if</span> data[i] == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(status) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> status[i-<span class="number">1</span>] == <span class="string">&#x27;unreg&#x27;</span>:</span><br><span class="line">                    status.append(<span class="string">&#x27;unreg&#x27;</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    status.append(<span class="string">&#x27;unactive&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                status.append(<span class="string">&#x27;unreg&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(status) == <span class="number">0</span>:</span><br><span class="line">                status.append(<span class="string">&#x27;new&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> status[i-<span class="number">1</span>] == <span class="string">&#x27;unactive&#x27;</span>:</span><br><span class="line">                    status.append(<span class="string">&#x27;return&#x27;</span>)</span><br><span class="line">                <span class="keyword">elif</span> status[i-<span class="number">1</span>] == <span class="string">&#x27;unreg&#x27;</span>:</span><br><span class="line">                    status.append(<span class="string">&#x27;new&#x27;</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    status.append(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> pd.Series(status)</span><br><span class="line"></span><br><span class="line">pivoted_purchase_status = pivoted_purchase.apply(<span class="keyword">lambda</span> x:active_stauts(x),axis = <span class="number">1</span>)</span><br><span class="line">pivoted_purchase_status.columns = columns_month</span><br><span class="line">pivoted_purchase_status.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>new</td>
+      <td>unactive</td>
+      <td>return</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>return</td>
+      <td>unactive</td>
+      <td>unactive</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>new</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>unreg</td>
+      <td>new</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+      <td>active</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>new</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+      <td>unactive</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pivoted_status_counts = pivoted_purchase_status.replace(<span class="string">&#x27;unreg&#x27;</span>,np.NaN).apply(<span class="keyword">lambda</span> x:pd.value_counts(x))</span><br><span class="line">pivoted_status_counts.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2019-03-01</th>
+      <th>2019-04-01</th>
+      <th>2019-05-01</th>
+      <th>2019-06-01</th>
+      <th>2019-07-01</th>
+      <th>2019-08-01</th>
+      <th>2019-09-01</th>
+      <th>2019-10-01</th>
+      <th>2019-11-01</th>
+      <th>2019-12-01</th>
+      <th>2020-01-01</th>
+      <th>2020-02-01</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>active</td>
+      <td>nan</td>
+      <td>7.00</td>
+      <td>9</td>
+      <td>16.00</td>
+      <td>20.00</td>
+      <td>18.00</td>
+      <td>11</td>
+      <td>12</td>
+      <td>15</td>
+      <td>14</td>
+      <td>16</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>new</td>
+      <td>13.00</td>
+      <td>2.00</td>
+      <td>8</td>
+      <td>9.00</td>
+      <td>17.00</td>
+      <td>17.00</td>
+      <td>10</td>
+      <td>9</td>
+      <td>6</td>
+      <td>7</td>
+      <td>7</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>return</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>1</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>unactive</td>
+      <td>nan</td>
+      <td>6.00</td>
+      <td>5</td>
+      <td>7.00</td>
+      <td>12.00</td>
+      <td>31.00</td>
+      <td>51</td>
+      <td>59</td>
+      <td>69</td>
+      <td>73</td>
+      <td>80</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(pivoted_status_counts.T)</span><br><span class="line">plt.title(<span class="string">&#x27;每月不同用户类型占比&#x27;</span>,fontsize = <span class="number">20</span>)</span><br><span class="line">plt.legend(pivoted_status_counts.index)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;用户数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_49_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>可以看到，不活跃用户占了较大的比重，而且呈持续上升趋势</li>
+<li>活跃用户为蓝色部分，保持较为稳定的状态，而回流用户在9月份产生并维持稳定，但回流人数并不高</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 回流用户 &amp; 活跃用户</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">return_rate = pivoted_status_counts.apply(<span class="keyword">lambda</span> x:x/x.<span class="built_in">sum</span>(),axis = <span class="number">1</span>)</span><br><span class="line">plt.plot(return_rate.loc[[<span class="string">&#x27;active&#x27;</span>,<span class="string">&#x27;return&#x27;</span>],].T)</span><br><span class="line">plt.title(<span class="string">&#x27;每月活跃用户 &amp; 回流用户对比&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间(月)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分数&#x27;</span>)</span><br><span class="line">plt.xticks(rotation = <span class="number">60</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_50_0.png"></p>
+<p><strong>图表解析</strong>：结合回流用户和活跃用户来看，在后期消费用户中，约70%是回流用户，30%为活跃用户，整体用户质量较好。</p>
+</br>
+
+<h3 id="用户质量"><a href="#用户质量" class="headerlink" title="用户质量"></a><strong>用户质量</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_amount = data.groupby(<span class="string">&#x27;user_id&#x27;</span>).order_amount.<span class="built_in">sum</span>().sort_values().reset_index()</span><br><span class="line">user_amount[<span class="string">&#x27;amount_cumsum&#x27;</span>] = user_amount.order_amount.cumsum()</span><br><span class="line">user_amount.tail()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>order_amount</th>
+      <th>amount_cumsum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>242</td>
+      <td>vs10000716</td>
+      <td>2616</td>
+      <td>29735</td>
+    </tr>
+    <tr>
+      <td>243</td>
+      <td>vs10000775</td>
+      <td>2730</td>
+      <td>32465</td>
+    </tr>
+    <tr>
+      <td>244</td>
+      <td>vs30026748</td>
+      <td>3296</td>
+      <td>35761</td>
+    </tr>
+    <tr>
+      <td>245</td>
+      <td>vs30029475</td>
+      <td>4623</td>
+      <td>40384</td>
+    </tr>
+    <tr>
+      <td>246</td>
+      <td>vs10000621</td>
+      <td>5704</td>
+      <td>46088</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">amount_total = user_amount.amount_cumsum.<span class="built_in">max</span>()</span><br><span class="line">user_amount[<span class="string">&#x27;prop&#x27;</span>] = user_amount.amount_cumsum.apply(<span class="keyword">lambda</span> x:x/amount_total)</span><br><span class="line">plt.plot(user_amount.prop)</span><br><span class="line">plt.title(<span class="string">&#x27;用户累计贡献金额百分比&#x27;</span>,fontsize = <span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_53_0.png"></p>
+<p><strong>图表解析</strong>：数据集用户共247人，其中约50人贡献了超过80%的销售额，也符合二八定律。</p>
+</br>
+
+<h3 id="用户生命周期"><a href="#用户生命周期" class="headerlink" title="用户生命周期"></a><strong>用户生命周期</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 各会员首次 &amp; 最后一次消费时间间隔</span></span><br><span class="line"></span><br><span class="line">order_dt_min = data.groupby(<span class="string">&#x27;user_id&#x27;</span>).order_dt.<span class="built_in">min</span>().dt.date</span><br><span class="line">order_dt_max = data.groupby(<span class="string">&#x27;user_id&#x27;</span>).order_dt.<span class="built_in">max</span>().dt.date</span><br><span class="line">life_time = (order_dt_max - order_dt_min).reset_index()</span><br><span class="line">life_time.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>order_dt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>vs10000005</td>
+      <td>273 days</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>vs10000621</td>
+      <td>351 days</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>vs10000627</td>
+      <td>1 days</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>vs10000716</td>
+      <td>238 days</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>vs10000743</td>
+      <td>0 days</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">life_time.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_dt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>247</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>32 days 03:59:01.700404</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>73 days 19:15:10.251372</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>0 days 00:00:00</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>0 days 00:00:00</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>1 days 00:00:00</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>13 days 00:00:00</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>351 days 00:00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">((order_dt_max - order_dt_min) / np.timedelta64(<span class="number">1</span>,<span class="string">&#x27;D&#x27;</span>)).hist(bins = <span class="number">15</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;用户生命周期&#x27;</span>,fontsize = <span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;天数&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_57_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>用户平均生命周期为32天，中位数为1天，说明存在至少50%的客户的首次消费即最后一次消费。</li>
+<li>最大生命周期为351天，约为数据源总时间长度，说明存在了从开始到最后有进行了消费的高质量用户</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  消费两次及以上的用户生命周期</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">life_time[<span class="string">&#x27;life_time&#x27;</span>] = life_time.order_dt / np.timedelta64(<span class="number">1</span>,<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line">life_time[life_time.life_time &gt; <span class="number">0</span>].life_time.hist(bins = <span class="number">15</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;二次消费及以上的用户生命周期&#x27;</span>,fontsize = <span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;天数&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;人数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_58_0.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">life_time[life_time.life_time &gt; <span class="number">0</span>].life_time.describe()</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>count   155.00
+mean     51.26
+std      87.84
+min       1.00
+25%       2.00
+50%       7.00
+75%      53.50
+max     351.00
+Name: life_time, dtype: float64
+</code></pre>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>二次消费及以上用户生命周期为51天，高于总体用户生命周期。</li>
+<li>从营销策略上看，用户在进行了首次消费后，需要对其进行引导再次消费，时间区间应该在30天之内。</li>
+</ul>
+</br>
+
+<h3 id="用户留存率"><a href="#用户留存率" class="headerlink" title="用户留存率"></a><strong>用户留存率</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 留存率 --&gt; 用户在第一次消费后，有多少比率进行了第二次消费</span></span><br><span class="line"><span class="comment"># 与回流率的区别在于：留存倾向计算第一次消费，并有多个时间区间</span></span><br><span class="line"></span><br><span class="line">user_purchase_retention = pd.merge(left=data,right = order_dt_min.reset_index(),</span><br><span class="line">                                  how = <span class="string">&#x27;inner&#x27;</span>,on = <span class="string">&#x27;user_id&#x27;</span>,suffixes=(<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;_min&#x27;</span>))</span><br><span class="line">user_purchase_retention[<span class="string">&#x27;order_dt&#x27;</span>] = pd.to_datetime(user_purchase_retention[<span class="string">&#x27;order_dt&#x27;</span>])</span><br><span class="line">user_purchase_retention[<span class="string">&#x27;order_dt_min&#x27;</span>] = pd.to_datetime(user_purchase_retention[<span class="string">&#x27;order_dt_min&#x27;</span>])</span><br><span class="line">user_purchase_retention[<span class="string">&#x27;date_diff&#x27;</span>] = (user_purchase_retention.order_dt - user_purchase_retention.order_dt_min) / np.timedelta64(<span class="number">1</span>,<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="built_in">bin</span> = [<span class="number">0</span>,<span class="number">30</span>,<span class="number">60</span>,<span class="number">90</span>,<span class="number">120</span>,<span class="number">150</span>,<span class="number">180</span>,<span class="number">365</span>]</span><br><span class="line">user_purchase_retention[<span class="string">&#x27;date_diff_bin&#x27;</span>] = pd.cut(user_purchase_retention[<span class="string">&#x27;date_diff&#x27;</span>],bins = <span class="built_in">bin</span>)</span><br><span class="line">user_purchase_retention.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>order_dt</th>
+      <th>order_products</th>
+      <th>order_amount</th>
+      <th>month</th>
+      <th>order_dt_min</th>
+      <th>date_diff</th>
+      <th>date_diff_bin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>vs30033073</td>
+      <td>2020-01-17</td>
+      <td>1</td>
+      <td>20</td>
+      <td>2020-01-01</td>
+      <td>2019-09-23</td>
+      <td>116.00</td>
+      <td>(90, 120]</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>vs30033073</td>
+      <td>2019-11-29</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-11-01</td>
+      <td>2019-09-23</td>
+      <td>67.00</td>
+      <td>(60, 90]</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>vs30033073</td>
+      <td>2019-11-13</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-11-01</td>
+      <td>2019-09-23</td>
+      <td>51.00</td>
+      <td>(30, 60]</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>vs30033073</td>
+      <td>2019-12-24</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-12-01</td>
+      <td>2019-09-23</td>
+      <td>92.00</td>
+      <td>(90, 120]</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>vs30033073</td>
+      <td>2019-10-29</td>
+      <td>2</td>
+      <td>20</td>
+      <td>2019-10-01</td>
+      <td>2019-09-23</td>
+      <td>36.00</td>
+      <td>(30, 60]</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pivoted_retention = user_purchase_retention.pivot_table(index=<span class="string">&#x27;user_id&#x27;</span>,</span><br><span class="line">                                                       columns = <span class="string">&#x27;date_diff_bin&#x27;</span>,</span><br><span class="line">                                                       values=<span class="string">&#x27;order_amount&#x27;</span>,</span><br><span class="line">                                                       aggfunc=<span class="built_in">sum</span>,</span><br><span class="line">                                                       dropna=<span class="literal">False</span>)</span><br><span class="line">pivoted_retention.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>date_diff_bin</th>
+      <th>(0, 30]</th>
+      <th>(30, 60]</th>
+      <th>(60, 90]</th>
+      <th>(90, 120]</th>
+      <th>(120, 150]</th>
+      <th>(150, 180]</th>
+      <th>(180, 365]</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>vs10000005</td>
+      <td>17.00</td>
+      <td>59.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>vs10000621</td>
+      <td>240.00</td>
+      <td>280.00</td>
+      <td>440.00</td>
+      <td>400.00</td>
+      <td>200.00</td>
+      <td>40.00</td>
+      <td>1700.00</td>
+    </tr>
+    <tr>
+      <td>vs10000627</td>
+      <td>0.00</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+    <tr>
+      <td>vs10000716</td>
+      <td>280.00</td>
+      <td>795.00</td>
+      <td>240.00</td>
+      <td>220.00</td>
+      <td>420.00</td>
+      <td>300.00</td>
+      <td>341.00</td>
+    </tr>
+    <tr>
+      <td>vs10000743</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+      <td>nan</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pivoted_retention.mean()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>date_diff_bin
+(0, 30]       47.88
+(30, 60]     148.62
+(60, 90]     169.92
+(90, 120]    310.32
+(120, 150]   112.90
+(150, 180]   112.93
+(180, 365]   700.36
+dtype: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pivoted_retention.transf = pivoted_retention.fillna(<span class="number">0</span>).applymap(<span class="keyword">lambda</span> x:<span class="number">1</span> <span class="keyword">if</span> x&gt;<span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">(pivoted_retention.transf.<span class="built_in">sum</span>() / pivoted_retention.transf.count()).plot.bar()</span><br><span class="line">plt.title(<span class="string">&#x27;各时间段的用户频率&#x27;</span>,fontsize = <span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间跨度(天)&#x27;</span>)</span><br><span class="line">plt.xticks(rotation = <span class="number">360</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分比&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_64_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>第一个月留存率超过了25%，而第二个月下降至15%左右</li>
+<li>之后几个月的留存率基本稳定在5%~10%之间，说明后面第二个月开始的流失率较大，且呈持续流失状态</li>
+</ul>
+</br>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 消费召回分析</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">diff</span>(<span class="params">group</span>):</span></span><br><span class="line">    d = group.date_diff.shift(-<span class="number">1</span>) - group.date_diff</span><br><span class="line">    <span class="keyword">return</span> d</span><br><span class="line"></span><br><span class="line">last_diff = user_purchase_retention.sort_values(<span class="string">&#x27;order_dt&#x27;</span>).reset_index().groupby(<span class="string">&#x27;user_id&#x27;</span>).apply(diff)</span><br><span class="line">last_diff.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>user_id        
+vs10000005  32      0.40
+            33     41.60
+            155     1.00
+            160     0.46
+            161   230.16
+Name: date_diff, dtype: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">last_diff.describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>count   1766.00
+mean       4.50
+std       14.03
+min        0.00
+25%        0.81
+50%        1.43
+75%        3.57
+max      230.16
+Name: date_diff, dtype: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">last_diff.hist(bins = <span class="number">15</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;用户平均购买周期&#x27;</span>,fontsize = <span class="number">23</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;时间跨度(天)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;百分数&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://gitee.com/minzvv/blog_images/raw/master/jianshen-hy/output_67_0.png"></p>
+<p><strong>图表解析</strong>：</p>
+<ul>
+<li>图像呈典型的长尾分布，说明大部分的用户消费时间间隔短</li>
+<li>从统计数据来看，用户平均消费间隔为4.5天，说明需要在4.5天左右的消费间隔对用户进行引导召回</li>
+</ul>
+</br>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上为健身平台用户消费行为分析的全部内容，感谢阅读。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>会员用户消费行为浅度挖掘</p><p><a href="http://example.com/2021/04/14/健身平台会员用户消费行为分析/">http://example.com/2021/04/14/健身平台会员用户消费行为分析/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><a href="http://example.com"><p>minzVV</p></a></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-04-14</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-26</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="recommend-area"><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 相关文章</span><br><span>  1.<a class="is-size-6" href="/2021/04/22/CDNow%E7%BD%91%E7%AB%99%E7%94%A8%E6%88%B7%E6%B6%88%E8%B4%B9%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/" target="_blank">用户消费有哪些特征？用户质量又如何界定？</a><br></span><span>  2.<a class="is-size-6" href="/2021/04/03/%E4%B8%9C%E8%8E%9E%E5%9C%B0%E5%8C%BA%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B5%81/" target="_blank">某壳网房屋租赁信息抓取与浅析</a><br></span><span>  3.<a class="is-size-6" href="/2021/03/29/%E5%A4%A9%E7%8C%AB%E5%8F%8C%E5%8D%81%E4%B8%80%E7%BE%8E%E5%A6%86%E9%94%80%E5%94%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_blank">剖析天猫双十一的美妆产品销售数据</a><br></span><span>  4.<a class="is-size-6" href="/2021/03/19/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90/" target="_blank">泰坦尼克号幸存者分析</a><br></span><span>  5.<a class="is-size-6" href="/2021/03/01/IMDB%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_blank">对比分析案例：IMDB电影数据分析及可视化</a><br></span><span>  6.<a class="is-size-6" href="/2021/01/29/%E6%AF%8D%E5%A9%B4%E4%BA%A7%E5%93%81%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_blank">电商项目：母婴用品购买行为分析</a><br></span><span>  7.<a class="is-size-6" href="/2020/12/29/Bigmart%20Sale/" target="_blank">大型商场销售额分析</a><br></span><span>  8.<a class="is-size-6" href="/2020/11/29/HR_Analytics/" target="_blank">员工离职原因分析</a><br></span></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/zfb.jpeg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://raw.githubusercontent.com/minzVV/blogimg/master/donates/weixin.jpeg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/04/16/you-get-%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">如何使用you-get获取视频？</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/04/03/%E4%B8%9C%E8%8E%9E%E5%9C%B0%E5%8C%BA%E6%88%BF%E5%B1%8B%E7%A7%9F%E8%B5%81/"><span class="level-item">某壳网房屋租赁信息抓取与浅析</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--><div class="card"><div class="card-content"><div class="title is-5">评论</div><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            language:'zh-CN',
+            id: 'aed28ed1a3fa75b4df23a90a9080a0fa',
+            repo: 'blog_comment',
+            owner: 'minzVV',
+            clientID: '475adee66f81ffbd3dc5',
+            clientSecret: '9231bb18bd4b221c6b2271ce8c57c4f3638b8006',
+            admin: "minzVV",
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex is-mobile" href="#项目描述"><span>项目描述</span></a></li><li><a class="is-flex is-mobile" href="#数据导入"><span>数据导入</span></a></li><li><a class="is-flex is-mobile" href="#数据处理"><span>数据处理</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#类型转换-amp-新字段提取"><span>类型转换 &amp; 新字段提取</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#用户消费分析"><span>用户消费分析</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#月度总趋势分析"><span>月度总趋势分析</span></a></li><li><a class="is-flex is-mobile" href="#用户个体消费趋势分析"><span>用户个体消费趋势分析</span></a></li><li><a class="is-flex is-mobile" href="#复购率"><span>复购率</span></a></li><li><a class="is-flex is-mobile" href="#回购率"><span>回购率</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#用户分层"><span>用户分层</span></a><ul class="menu-list"><li><a class="is-flex is-mobile" href="#RFM-分层"><span>RFM 分层</span></a></li><li><a class="is-flex is-mobile" href="#根据活跃度分层"><span>根据活跃度分层</span></a></li><li><a class="is-flex is-mobile" href="#用户质量"><span>用户质量</span></a></li><li><a class="is-flex is-mobile" href="#用户生命周期"><span>用户生命周期</span></a></li><li><a class="is-flex is-mobile" href="#用户留存率"><span>用户留存率</span></a></li></ul></li><li><a class="is-flex is-mobile" href="#总结"><span>总结</span></a></li></ul></div></div><style>.menu-list > li > a.is-active + .menu-list { display: block; }.menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://cdn.jsdelivr.net/gh/removeif/removeif-demo@latest/img/avatar.png" alt="minzVV"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">minzVV</p><p class="is-size-6 is-block">但行好事，莫问前程</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国广东</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">29</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">15</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">16</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/minzVV" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/minzVV"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wong_minz@163.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Next" href="https://minzVV.github.io/minzVV.io"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE/"><span class="tag">数据分析项目</span><span class="tag is-grey-lightest">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL%E7%BB%83%E4%B9%A0%E9%A2%98/"><span class="tag">MySQL练习题</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python%E5%BA%93/"><span class="tag">Python库</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><span class="tag">python数据类型</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9B%BE%E8%A1%A8/"><span class="tag">可视化图表</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90/"><span class="tag">名词解析</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"><span class="tag">算法基础</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%85%AB%E5%AE%9A%E5%BE%8B/"><span class="tag">二八定律</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/"><span class="tag">对比分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"><span class="tag">技术分享</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83/"><span class="tag">数据分布</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C/"><span class="tag">正态性检验</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/"><span class="tag">相关性分析</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><span class="tag">统计分析</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">icarus</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/removeif/hexo-theme-amazing" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">amazing</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/minzVV/blog" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">myblog_theme</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟缓存...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-29T12:41:02.000Z">2021-05-29</time></p><p class="title"><a href="/2021/05/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BB%E6%89%BE%E7%AC%ACN%E9%AB%98%E7%9A%84%E6%95%B0%E6%8D%AE/">每日一题 - 寻找第N高的数据</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-28T14:33:36.000Z">2021-05-28</time></p><p class="title"><a href="/2021/05/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9F%A5%E6%89%BE%E9%87%8D%E5%A4%8D%E5%80%BC/">每日一题 - 查找重复值</a></p><p class="categories"><a href="/categories/SQL/">SQL</a> / <a href="/categories/SQL/MySQL/">MySQL</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-26T06:58:34.000Z">2021-05-26</time></p><p class="title"><a href="/2021/05/26/blog_post/">博客文章属性</a></p><p class="categories"><a href="/categories/blog/">blog</a> / <a href="/categories/blog/post/">post</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-22T12:41:02.000Z">2021-04-22</time></p><p class="title"><a href="/2021/04/22/CDNow%E7%BD%91%E7%AB%99%E7%94%A8%E6%88%B7%E6%B6%88%E8%B4%B9%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90/">用户消费有哪些特征？用户质量又如何界定？</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a> / <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%93%8D/">项目实操</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-16T12:41:02.000Z">2021-04-16</time></p><p class="title"><a href="/2021/04/16/you-get-%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91/">如何使用you-get获取视频？</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/SQL/"><span class="level-start"><span class="level-item">SQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/SQL/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/blog/post/"><span class="level-start"><span class="level-item">post</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/python/Matplotlib/"><span class="level-start"><span class="level-item">Matplotlib</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/Seaborn/"><span class="level-start"><span class="level-item">Seaborn</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/python/data-type/"><span class="level-start"><span class="level-item">data_type</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"><span class="level-start"><span class="level-item">技术分享</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="level-start"><span class="level-item">数据分析</span></span><span class="level-end"><span class="level-item tag">19</span></span></a><ul class="mr-0"></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><!--!--><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/minz_logo3.png" alt="Hexo" height="28"></a><p class="size-small"><span>&copy; 2021 minzVV</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a> &amp; <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">Amazing</a> <br><span>© <a href="http://www.beian.miit.gov.cn/" target="_blank">川ICP备88888888号-8（测试）</a><br></span><span>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br />&nbsp;&nbsp;&nbsp;&nbsp;方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br /></span><span><span id="statistic-times">loading...</span><script>function createTime(time) {
+            var n = new Date(time);
+            now.setTime(now.getTime() + 250),
+                days = (now - n) / 1e3 / 60 / 60 / 24,
+                dnum = Math.floor(days),
+                hours = (now - n) / 1e3 / 60 / 60 - 24 * dnum,
+                hnum = Math.floor(hours),
+            1 == String(hnum).length && (hnum = "0" + hnum),
+                minutes = (now - n) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+                mnum = Math.floor(minutes),
+            1 == String(mnum).length && (mnum = "0" + mnum),
+                seconds = (now - n) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+                snum = Math.round(seconds),
+            1 == String(snum).length && (snum = "0" + snum),
+                document.getElementById("statistic-times").innerHTML = "❤️本站自 <strong>"+time.split(" ")[0].replace(/\//g,".")+"</strong> 已运行 <strong>" + dnum + "</strong> 天 <strong>" + hnum + "</strong> 小时 <strong>" + mnum + "</strong> 分 <strong>" + snum + "</strong> 秒！❤️";
+        }var now = new Date();setInterval("createTime('2021/03/15 00:00:00')", 250,"");</script><br></span><div class="size-small"><span>❤️感谢 <strong><span id="busuanzi_value_site_uv">99+</span></strong> 小伙伴的 <strong><span id="busuanzi_value_site_pv">99+</span></strong> 次光临！❤️</span></div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/minzVV/hexo-theme-amazing"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);})</script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        function loadMathJax() { //加载mathjax
+            $.getScript("//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML", function () {
+                MathJax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\(', '\)']] } });
+                var math = document.getElementsByClassName("entry-content")[0];
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, math]);
+            });
+        };
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('475adee66f81ffbd3dc5','9231bb18bd4b221c6b2271ce8c57c4f3638b8006','minzVV','blog_comment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+            if(typeof loadBanner == 'function'){
+                loadBanner();
+            }
+        });</script></body></html>
